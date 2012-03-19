@@ -1,0 +1,109 @@
+
+##############>>>###>>>###>>>###>>>###>>>###>>>####
+##############>>>###>>>###>>>###>>>###>>>###>>>####
+############  >>> cp_p i mv_p
+############      - funkcje pokazujące postęp kopiwania/przenoszenia
+function cp_p () 
+{ 
+    strace -q -ewrite cp -- "${1}" "${2}" 2>&1 | awk '{
+        count += $NF
+            if (count % 10 == 0) {
+               percent = count / total_size * 100
+               printf "%3d%% [", percent
+               for (i=0;i<=percent;i++)
+                  printf "="
+               printf ">"
+               for (i=percent;i<100;i++)
+                  printf " "
+               printf "]\r"
+            }
+         }
+         END { print "" }' total_size=$(stat -c '%s' "${1}") count=0
+}
+##############
+function mv_p () 
+{ 
+    strace -q -ewrite mv -- "${1}" "${2}" 2>&1 | awk '{
+        count += $NF
+            if (count % 10 == 0) {
+               percent = count / total_size * 100
+               printf "%3d%% [", percent
+               for (i=0;i<=percent;i++)
+                  printf "="
+               printf ">"
+               for (i=percent;i<100;i++)
+                  printf " "
+               printf "]\r"
+            }
+         }
+         END { print "" }' total_size=$(stat -c '%s' "${1}") count=0
+}
+##############<<<###<<<###<<<###<<<###<<<###<<<####
+##############<<<###<<<###<<<###<<<###<<<###<<<####
+
+############# moja autorska funkcja listująca dyski usb
+listusbdisks () 
+{
+    [[ "x$1" == "x-v" ]] && shift && local VERBOSE=-v
+    for dsk in ${@-/dev/sd?}
+    do
+        /sbin/udevadm info --query=path --name="$dsk" | grep --colour=auto -q usb || continue
+        echo "===== device $dsk is:"
+        ( eval $(/sbin/udevadm info --query=property --name="$dsk" | grep "\(MODEL\|VENDOR\)_ID")
+          [ "$ID_VENDOR_ID:$ID_MODEL_ID" == ":" ] && echo "Unknown" || \
+	    lsusb $VERBOSE -d "$ID_VENDOR_ID:$ID_MODEL_ID" 
+	)
+	grep -q "$dsk" /proc/mounts && echo "----- DEVICE IS MOUNTED ----" 
+        echo
+    done
+}
+
+
+##############
+function spawn() {
+	( "$@" & ) &> /dev/null
+}
+
+#############
+showtime () 
+{ 
+    SEC="%S.%N"
+    case "$1" in
+        [hHaAfF]) # include (H)ours = (A)ll = (F)ull time
+            HRS="%H:"
+            MIN="%M:" ;;
+        [mM]) 
+            MIN="%M:" ;;
+        [nN]) # only nanoseconds (sic!)
+            SEC="%N" ;;
+    esac
+                
+    while IFS= read -r line; do
+        printf "\e[33m[ $( date +${HRS}${MIN}${SEC} ) ]\e[0m $line\n";
+    done
+}
+
+##############
+function gadaj() 
+{ echo "$@" | sed "s/\.\{1,\}/,/g" | uconv -s -f "UTF-8" -t "ISO8859-2" | catspeech; }
+
+##############
+### from fgo:
+function gpo_search() 
+{ 
+	[[ "$1" && "$1" != "*[[:space:]]*" ]] && \
+	   curl -s "http://gentoo.zapto.org/packages/search?description=$1" | \
+	   html2text -nobs | awk '/results for query/ { i=1 }; (i && $1 != "[Home]") { print }'
+}
+###############
+
+#### 
+#### Przypomnienie odpalane przy wejściu do katalogu
+### źródło: http://unix.stackexchange.com/questions/18532/show-message-when-cd-into-specific-directory/18533#18533
+reminder_cd() 
+{
+    cd $@ && [ -f ".cd-reminder" ] && cat .cd-reminder
+}
+#użycie: alias cd="reminder_cd"
+
+
