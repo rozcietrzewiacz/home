@@ -1,3 +1,5 @@
+*~
+*.swp
 /*
 !/.bashrc
 !/.bashrc-functions
@@ -18,3 +20,20 @@
 !/scripts/toggle_speed.sh
 !/scripts/touchpad.sh
 !/scripts/zmniejsz_jpg.sh
+!/.config/
+/.config/*
+!/.config/awesome/
+!/.config/Terminal
+!/.config/compiz
+!/.config/gtk-2.0
+!/.config/luakit/
+/.config/luakit/*
+!/.config/luakit/rc.lua
+!/.config/luakit/modes.lua
+!/.config/luakit/webview.lua
+!/.config/luakit/window.lua
+!/.config/luakit/globals.lua
+!/.config/luakit/theme.lua
+!/.config/luakit/binds.lua
+!/.config/mirage/
+

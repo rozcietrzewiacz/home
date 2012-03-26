@@ -1,0 +1,63 @@
+[window]
+w = 1024
+h = 768
+toolbar = True
+statusbar = True
+thumbpane = False
+
+[prefs]
+simple-bgcolor = False
+bgcolor-red = 0
+bgcolor-green = 0
+bgcolor-blue = 0
+open_all = True
+hidden = False
+use_last_dir = True
+last_dir = /mnt
+fixed_dir = /home/janek
+open_mode = 1
+last_mode = 1
+listwrap_mode = 0
+slideshow_delay = 5
+slideshow_random = False
+zoomquality = 1
+quality_save = 90
+disable_screensaver = True
+slideshow_in_fullscreen = True
+confirm_delete = True
+preloading_images = True
+savemode = 2
+start_in_fullscreen = False
+thumbsize = 128
+screenshot_delay = 2
+
+[actions]
+num_actions = 6
+names[0] = invert a jpeg
+commands[0] = jpegtopnm %F | pnminvert | pnmtojpeg > %P%N_inv%E
+shortcuts[0] = <Shift><Control><Alt>j
+batch[0] = False
+names[1] = invert a pnm
+commands[1] = pnminvert %F > %P%N_inv.pnm
+shortcuts[1] = <Shift><Control><Alt>i
+batch[1] = False
+names[2] = Open in GIMP
+commands[2] = gimp-remote %F
+shortcuts[2] = <Control>e
+batch[2] = False
+names[3] = Create Thumbnail
+commands[3] = convert %F -thumbnail 150x150 %Pt_%N.jpg
+shortcuts[3] = <Alt>t
+batch[3] = False
+names[4] = Create Thumbnails
+commands[4] = convert %F -thumbnail 150x150 %Pt_%N.jpg
+shortcuts[4] = <Control><Alt>t
+batch[4] = True
+names[5] = Move to Favorites
+commands[5] = mkdir -p ~/mirage-favs; mv %F ~/mirage-favs; [NEXT]
+shortcuts[5] = <Control><Alt>f
+batch[5] = False
+
+[recent]
+num_recent = 0
+

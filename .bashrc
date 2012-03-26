@@ -7,14 +7,14 @@ if [[ $- != *i* ]] ; then
 fi
 
 
-HISTIGNORE="*xpdf*upw*:*xpdf*opw*:*goenc*:*xamisc*:*cd \"\`echo -e *:*cd \"\`printf *"
+HISTIGNORE="*xpdf*upw*:*xpdf*opw*:*goenc*:*xamisc*:*cd *echo -e *:*cd *printf *"
 HISTSIZE=1400
 HISTCONTROL=ignoredups:erasedups
 LANG="pl_PL.UTF-8"
 LC_MESSAGES="C"
-PATH=${PATH}:/usr/kde/3.5/bin:/home/janek/bin
+PATH=${PATH}:$HOME/bin # This has to be used with extreme caution! Monitor the contents of ~/bin
 XDG_DATA_HOME="$HOME/.config"
-BROWSER="~/scripts/browser.sh"
+BROWSER="$HOME/scripts/browser.sh"
 export BROWSER
 export HISTIGNORE
 export HISTSIZE
@@ -59,6 +59,8 @@ alias ssh="TERM=xterm ssh"
 alias cd..='cd ..'
 alias ..='cd ..'
 alias man='LANG=C man'
+alias ll="ls -lhF"
+alias la="ls -lahF"
 alias hrr='history -c; history -r'
 
 zgrep -m1 "CONFIG_SCHED_AUTOGROUP=y" /proc/config.gz || \
