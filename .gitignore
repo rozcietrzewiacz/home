@@ -1,5 +1,3 @@
-*~
-*.swp
 /*
 !/.bashrc
 !/.bashrc-functions
@@ -35,5 +33,5 @@
 !/.config/luakit/globals.lua
 !/.config/luakit/theme.lua
 !/.config/luakit/binds.lua
-!/.config/mirage/
-
+*~
+*.swp
