@@ -4,6 +4,8 @@
 !/.bashrc-completion
 !/.gitignore
 !/.toprc
+!/scripts/
+/scripts/*
 !/scripts/analyse-x86.sh
 !/scripts/boost_opera.sh
 !/scripts/browser.sh
