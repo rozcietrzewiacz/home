@@ -1,0 +1,8 @@
+style "gnomemplayer" = "gtkwidget" 
+{
+xthickness = 1
+ythickness = 1
+text[NORMAL] = "#616161"
+bg[SELECTED] = "#033566"
+}
+widget_class "*GmtkMediaTracker*" style "gnomemplayer"

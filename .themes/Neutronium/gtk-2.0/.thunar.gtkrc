@@ -1,0 +1,65 @@
+style "thunarentry"
+{
+xthickness = 2
+ythickness = 2
+engine "pixmap"
+{
+image
+{
+function = SHADOW
+detail = "entry"
+shadow = IN
+recolorable = FALSE
+file = ".pixbuf/entry.png"
+border = {3,3,10,10}
+stretch = TRUE
+}
+}
+}
+class "ThunarPathEntry"		style "thunarentry"
+
+style "thunarbutton"
+{
+xthickness = 2
+ythickness = 2
+engine "pixmap" 
+{
+image
+{
+function = BOX
+recolorable = TRUE
+state = NORMAL
+file = ".pixbuf/normal.png"
+border = {10,10,10,10}
+stretch = TRUE
+}
+image
+{
+function = BOX
+recolorable = TRUE
+state = PRELIGHT
+file = ".pixbuf/prelight.png"
+border = {10,10,10,10}
+stretch = TRUE
+}
+image
+{
+function = BOX
+recolorable = TRUE
+state = ACTIVE
+file = ".pixbuf/pressed.png"
+border = {10,10,10,10}
+stretch = TRUE
+}
+image
+{
+function = BOX
+recolorable = TRUE
+state = INSENSITIVE
+file = ".pixbuf/disabled.png"
+border = {10,10,10,10}
+stretch = TRUE
+}
+}
+}
+widget_class "*ThunarWindow*ThunarLocationEntry.GtkToggleButton*" style "thunarbutton"

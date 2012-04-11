@@ -1,0 +1,22 @@
+pixmap_path "/usr/share/icons/Matt"
+
+style "icons"
+{
+stock["quodlibet"] = { { @"quodlibet" } }
+stock["exfalso"] = { { @"exfalso" } }
+stock["device-ipod"] = { { @"multimedia-player-ipod" } }
+stock["device-generic"] = { { @"drive-harddisk" } }
+stock["audio-volume-muted"] = { { @"audio-volume-muted" } }
+stock["audio-volume-low"] = { { @"audio-volume-low" } }
+stock["audio-volume-medium"] = { { @"audio-volume-medium" } }
+stock["audio-volume-high"] = { { @"audio-volume-high" } }
+stock["chain"] = { { @"chain" } }
+stock["chain-broken"] = { { @"chain-broken" } }
+stock["gxine-media-playlist"] = { { @"gtk-index" } }
+stock["gxine-media-speaker"] = { { @"xfce4-mixer-no-muted" } }
+stock["gxine-media-speaker-mute"] = { { @"audio-volume-00" } }
+stock["gxine-icon"] = { { @"gxine" } }
+stock["gxine"] = { { @"gxine" } }
+stock["tango-add-bookmark"] = { { @"bookmark-new" } }
+}
+class "GtkWidget" style "icons"

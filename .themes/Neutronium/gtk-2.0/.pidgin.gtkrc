@@ -1,0 +1,17 @@
+style "pidgin" = "GtkWidget"
+{
+fg[NORMAL] = "#616161"
+text[NORMAL] = "#616161"
+bg[NORMAL] = "#333333"
+base[NORMAL] = "#333333"
+GtkTreeView::odd_row_color = "#333333"
+GtkTreeView::even_row_color = "#333333"
+GtkIMHtml::hyperlink-color = "#0083B7"
+GtkIMHtml::hyperlink-visited-color = "#BC1449"
+GtkIMHtml::send-name-color = "#FF4D00"
+GtkIMHtml::receive-name-color = "#55FF00"
+GtkIMHtml::highlight-name-color = "#FF0000"
+GtkIMHtml::action-name-color = "#0984FF"
+GtkIMHtml::typing-notification-color = "#616161"
+}
+widget "*pidgin_blist_treeview" style "pidgin"

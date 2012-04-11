@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=LaGaDesk-N12-OB
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=LaGaDesk-N12-OB
+MetacityTheme=LaGaDesk-N12-R
+IconTheme=LaGaDesk-BlackWhite-Orange
+GtkColorScheme=fg_color:#b7b7b7b7b7b7,bg_color:#2b2b2b2b2b2b,text_color:#8e738e738e73,base_color:#18c618c618c6,selected_fg_color:#ffffffffffff,selected_bg_color:#777777777777,tooltip_fg_color:#000000000000,tooltip_bg_color:#d7d7d7d7d7d7
+CursorTheme=oxy-grey
+CursorSize=24
+NotificationTheme=ubuntu

@@ -1,0 +1,31 @@
+gtk-button-images = 0
+gtk-menu-images = 0
+gtk-font-name = "Liberation Sans Bold 10"
+gtk-icon-sizes = "panel-menu=24,24:panel=24,24:gtk-dialog=48,48:gtk-small-toolbar=24,24:gtk-large-toolbar=32,32:gtk-menu=24,24:gtk-button=22,22"
+gtk-menu-drop-shadow = 0
+gtk-menu-shadow-delay = 0
+gtk-enable-mnemonics = 0
+gtk-toolbar-style = GTK_TOOLBAR_ICONS
+gtk-tooltip-timeout = 0
+gtk-entry-password-hint-timeout = 500
+gtk-fallback-icon-theme = Smooth
+gtk-menu-popdown-delay = 0
+gtk-menu-popup-delay = 0
+gtk-timeout-expand = 200
+gtk-tooltip-timeout=300
+gtk-tooltip-browse-mode-timeout = 400
+gtk-xft-antialias = 1
+gtk-xft-hinting = 0
+gtk-error-bell = 0
+include ".theme.gtkrc"
+include ".thunar.gtkrc"
+include ".pidgin.gtkrc"
+include ".transmission.gtkrc"
+include ".gnomemplayer.gtkrc"
+include ".xfceheaders.gtkrc"
+include ".iconviews.gtkrc"
+include ".xficonview.gtkrc"
+include ".galeon.gtkrc"
+include ".epiphany.gtkrc"
+include ".gxine.gtkrc"
+include ".icon.gtkrc"

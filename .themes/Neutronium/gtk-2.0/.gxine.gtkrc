@@ -1,0 +1,25 @@
+style "gxine_info" = "gtkwidget"
+{
+fg[NORMAL] = "#0984ff"
+bg[NORMAL] = "#333333"
+fg[ACTIVE] = "#0984ff"
+bg[ACTIVE] = "#333333"
+bg[PRELIGHT] = "#333333"
+}
+widget "*.gxine_info*" style "gxine_info"
+widget "*.gxine_time*" style "gxine_info"
+
+
+style "gxine_large"
+{
+  font_name = "bold 10"
+}
+widget "*.gxine_info_large" style "gxine_large"
+widget "*.gxine_time_large" style "gxine_large"
+
+style "gxine_small"
+{
+  font_name = "8"
+}
+widget "*.gxine_info_small" style "gxine_small"
+widget "*.gxine_time_small" style "gxine_small"

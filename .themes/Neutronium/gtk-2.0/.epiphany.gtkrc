@@ -1,0 +1,6 @@
+style "epiphany" = "gtkwidget"
+{
+EphyLocationEntry::secure-bg-color = "#441d00"
+EphyLocationEntry::secure-fg-color = "#616161"
+}
+class "EphyLocationEntry" style "epiphany"

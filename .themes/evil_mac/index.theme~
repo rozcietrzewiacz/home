@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Glossy Panther
+Type=X-GNOME-Metatheme
+Comment=Based on OSX Panther, SmoothStripes, Roberto's SmootS, Grand_Masta's stuff, etc... 
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Glossy Panther
+MetacityTheme=Glossy Panther
+IconTheme=Industrial
