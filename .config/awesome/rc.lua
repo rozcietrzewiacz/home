@@ -35,14 +35,12 @@ layouts =
 {
     awful.layout.suit.floating,		-- 1
      -- ^^ the "classic" model
-    awful.layout.suit.tile.top,		-- 2
-    awful.layout.suit.tile.bottom,	-- 3
-    awful.layout.suit.tile,		-- 4
-    awful.layout.suit.tile.left,	-- 5
-    awful.layout.suit.fair,		-- 6
-    awful.layout.suit.fair.horizontal,	-- 7
-    awful.layout.suit.spiral,		-- 8
-    awful.layout.suit.spiral.dwindle	-- 9
+    awful.layout.suit.tile,		-- 2
+    awful.layout.suit.tile.left,	-- 3
+    awful.layout.suit.tile.bottom,	-- 4
+    awful.layout.suit.tile.top,		-- 5
+    awful.layout.suit.spiral,		-- 6
+    awful.layout.suit.spiral.dwindle	-- 7
 }
 
 -- Table of clients that should be set floating. The index may be either

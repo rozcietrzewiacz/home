@@ -52,6 +52,7 @@ listusbdisks ()
         ( eval $(/sbin/udevadm info --query=property --name="$dsk" | grep "\(MODEL\|VENDOR\)_ID")
           [ "$ID_VENDOR_ID:$ID_MODEL_ID" == ":" ] && echo "Unknown" || \
 	    lsusb $VERBOSE -d "$ID_VENDOR_ID:$ID_MODEL_ID" 
+          /sbin/fdisk -l $dsk | grep --color=always "${dsk}[0-9]*"
 	)
 	grep -q "$dsk" /proc/mounts && echo "----- DEVICE IS MOUNTED ----" 
         echo

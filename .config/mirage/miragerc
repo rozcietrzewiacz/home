@@ -1,6 +1,6 @@
 [window]
-w = 1024
-h = 768
+w = 1680
+h = 1031
 toolbar = True
 statusbar = True
 thumbpane = False
@@ -16,7 +16,7 @@ use_last_dir = True
 last_dir = /mnt
 fixed_dir = /home/janek
 open_mode = 1
-last_mode = 1
+last_mode = 2
 listwrap_mode = 0
 slideshow_delay = 5
 slideshow_random = False
