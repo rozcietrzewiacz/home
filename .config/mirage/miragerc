@@ -1,9 +1,9 @@
 [window]
-w = 1680
-h = 1031
+w = 1678
+h = 1029
 toolbar = True
 statusbar = True
-thumbpane = False
+thumbpane = True
 
 [prefs]
 simple-bgcolor = False
@@ -13,10 +13,10 @@ bgcolor-blue = 0
 open_all = True
 hidden = False
 use_last_dir = True
-last_dir = /mnt
+last_dir = /media/sdb1/DCIM/103CANON
 fixed_dir = /home/janek
 open_mode = 1
-last_mode = 2
+last_mode = 1
 listwrap_mode = 0
 slideshow_delay = 5
 slideshow_random = False

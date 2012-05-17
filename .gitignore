@@ -4,6 +4,7 @@
 !/.bashrc-completion
 !/.gitignore
 !/.toprc
+!/.vimrc
 !/scripts/
 /scripts/*
 !/scripts/analyse-x86.sh

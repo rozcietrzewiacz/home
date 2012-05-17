@@ -7,7 +7,7 @@ if [[ $- != *i* ]] ; then
 fi
 
 
-HISTIGNORE="*xpdf*upw*:*xpdf*opw*:*goenc*:*xamisc*:*cd *echo -e *:*cd *printf *"
+HISTIGNORE="*xpdf*upw*:*xpdf*opw*:*goenc*:*xamisc*:*cd *echo -e *:*cd *printf"
 HISTSIZE=1400
 HISTCONTROL=ignoredups:erasedups
 LANG="pl_PL.UTF-8"

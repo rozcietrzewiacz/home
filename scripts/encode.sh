@@ -4,7 +4,7 @@ function do_mp3 ()
 {
 	NR=1
 	b="0"
-	while read tytul
+	while read -r -p "Podaj tytul utworu $NR : " tytul
 	do
 		lame --preset standard \
 		 --ta "$1" --tl "$2" \
@@ -12,6 +12,7 @@ function do_mp3 ()
 		"${b}${NR}-${tytul}.mp3"
 		NR=$(($NR+1))
 		if [[ $NR > 9 ]]; then b=""; fi
+                echo
 	done
 }
 
@@ -32,8 +33,8 @@ EOF
 ####### MAIN #######
 if [[ $# < 2 ]]; then usage; exit 1; fi
 if [[ $# > 2 ]]; then cd "$3"; fi
-mkdir -p "$1"; cd "$1"
-mkdir -p "$2"; cd "$2"
+mkdir -p "$1" && cd "$1"
+mkdir -p "$2" && cd "$2"
 
 libcdio-paranoia -B && do_mp3 "$1" "$2"
 #do_mp3 "$1" "$2"

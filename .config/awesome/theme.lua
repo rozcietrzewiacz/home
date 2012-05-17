@@ -62,7 +62,7 @@ theme.titlebar_close_button_normal = basepth .. "/zenburn-anrxc/titlebar/close_n
 theme.titlebar_close_button_focus = basepth .. "/zenburn-anrxc/titlebar/close_focus.png"
 
 -- You can use your own command to set your wallpaper
---theme.wallpaper_cmd = { "/usr/bin/awsetbg /mnt/windows/Zdj_n_pics/Screen/bg/Skrzydlata_w_chmurach_1.jpg" }
+theme.wallpaper_cmd = { } --"/usr/bin/awsetbg /mnt/windows/Zdj_n_pics/Screen/bg/Skrzydlata_w_chmurach_1.jpg" }
 --theme/background.png
 
 -- You can use your own layout icons like this:
