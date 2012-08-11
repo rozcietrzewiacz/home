@@ -38,8 +38,6 @@ function mv_p ()
          }
          END { print "" }' total_size=$(stat -c '%s' "${1}") count=0
 }
-##############<<<###<<<###<<<###<<<###<<<###<<<####
-##############<<<###<<<###<<<###<<<###<<<###<<<####
 
 ############# moja autorska funkcja listująca dyski usb
 listusbdisks () 
@@ -63,6 +61,25 @@ listusbdisks ()
 ##############
 function spawn() {
 	( "$@" & ) &> /dev/null
+}
+
+#############
+showtime () 
+{ 
+    SEC="%S.%N"
+    case "$1" in
+        [hHaAfF]) # include (H)ours = (A)ll = (F)ull time
+            HRS="%H:"
+            MIN="%M:" ;;
+        [mM]) 
+            MIN="%M:" ;;
+        [nN]) # only nanoseconds (sic!)
+            SEC="%N" ;;
+    esac
+                
+    while IFS= read -r line; do
+        printf "\e[33m[ $( date +${HRS}${MIN}${SEC} ) ]\e[0m $line\n";
+    done
 }
 
 ##############

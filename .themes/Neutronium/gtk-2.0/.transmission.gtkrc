@@ -1,0 +1,24 @@
+style "transmission" {
+xthickness = 1
+ythickness = 1
+engine "pixmap"
+{
+image
+{
+function = BOX
+state = NORMAL
+file = ".pixbuf/progressbartrough.png"
+border = {2,2,2,2}
+stretch = TRUE
+}
+image
+{
+function = BOX
+state = SELECTED
+file = ".pixbuf/progressbar.png"
+border = {2,2,2,2}
+stretch = TRUE
+}
+}
+}
+widget_class "*GtkTreeView*" style "transmission"

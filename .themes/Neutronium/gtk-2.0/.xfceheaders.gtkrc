@@ -1,0 +1,6 @@
+style "title"
+{
+base[NORMAL] = "#333333"
+text[NORMAL] = "#616161"
+}
+class "XfceHeading" style "title"

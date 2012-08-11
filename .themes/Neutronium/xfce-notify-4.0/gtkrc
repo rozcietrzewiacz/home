@@ -1,0 +1,58 @@
+include "../gtk-2.0/gtkrc"
+
+style "xfnotifywindow" = "GtkWidget"
+{
+XfceNotifyWindow::border-color = "#0984ff"
+XfceNotifyWindow::border-radius = 8.0
+XfceNotifyWindow::border-width = 0
+bg[NORMAL] = "#111111" 
+}
+class "XfceNotifyWindow" style "xfnotifywindow"
+
+style "xfnotifytext" = "GtkWidget"
+{
+fg[NORMAL] = "#0984ff"
+fg[PRELIGHT] = "#0984ff"
+}
+widget_class "XfceNotifyWindow.*.<GtkLabel>" style "xfnotifytext"
+
+style "xfnotifybutton" = "GtkWidget"
+{
+engine "pixmap" {
+image
+{
+function = BOX
+detail = "buttondefault"
+recolorable	= TRUE
+file = "button.png"
+border = {5,5,5,5}
+stretch	= TRUE
+}
+image
+{
+function = BOX
+state = PRELIGHT
+recolorable	= TRUE
+file = "button-pre.png"
+border = {5,5,5,5}
+stretch	= TRUE
+}
+image
+{
+function = BOX
+state = ACTIVE
+file = "button.png"
+border = {5,5,5,5}
+stretch	= TRUE
+}
+image 
+{
+function = BOX
+state = INSENSITIVE
+file = "button.png"
+border = {5,5,5,5}
+stretch	= TRUE
+}
+}
+}
+widget_class "XfceNotifyWindow.*.GtkButton*" style "xfnotifybutton"

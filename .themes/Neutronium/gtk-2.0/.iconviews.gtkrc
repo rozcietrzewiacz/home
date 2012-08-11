@@ -1,0 +1,31 @@
+style "iconview" = "gtkwidget"
+{
+#GTK+
+GtkIconView::selection-box-alpha = 70
+GtkIconView::selection_box_color = "#383838"
+
+#Thunar
+ThunarIconView::selection-box-alpha = 70
+ThunarIconView::selection_box_color = "#383838"
+
+#Libexo
+ExoIconView::selection-box-alpha = 70
+ExoIconView::selection_box_color = "#383838"
+
+#Nautilus
+NautilusIconContainer::selection-box-alpha = 70
+NautilusIconContainer::selection_box_color = "#383838"
+NautilusIconContainer::light_info_color   = "#444444"
+
+#all
+base[NORMAL] = "#292929"
+base[ACTIVE] = "#222222"
+base[SELECTED] = "#222222"
+text[NORMAL] = "#616161"
+text[ACTIVE] = "#0984ff"
+text[SELECTED] = "#0984ff"
+}
+class "GtkIconView" style "iconview"
+class "ExoIconView" style "iconview"
+class "ThunarIconView" style "iconview"
+class "NautilusIconContainer" style "iconview"

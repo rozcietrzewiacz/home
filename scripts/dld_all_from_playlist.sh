@@ -1,6 +1,12 @@
 #!/bin/bash
-grep "^http:" $1 | sed 's/\?u=.*//g' | \
+if [[ -r "$1" ]] 
+then
+  LIST="$1"
+  shift
+fi
+ 
+
+grep "^http:" "$LIST" | sed 's/\?u=.*//g' | \
 	while read strum
-	do wget "$strum"
-	#sleep 10
+	do wget "$strum" $@
 	done

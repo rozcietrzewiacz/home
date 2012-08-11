@@ -1,8 +1,8 @@
 #!/bin/bash
-##################
+#################
+# Toggles the enabled/disabled state of Thinkpad's pointing devices.
 #
-# Written by .yankee (jankeso -at- gmail com)
-#
+# Written by /rozcietrzewiacz/ (jankeso -at- gmail com)
 #
 
 TPad='xinput --list-props Mouse1 | grep "Device Enabled.*:.*1" >/dev/null'

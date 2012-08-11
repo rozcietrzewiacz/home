@@ -1,0 +1,644 @@
+style "gtkwidget"
+{
+GtkAdjustment::page-size = 0
+GtkButton::child-displacement-x = 0
+GtkButton::child-displacement-y = 1
+GtkButton::default-border = {0,0,0,0}
+GtkComboBox::shadow_type = GTK_SHADOW_NONE
+GtkComboBox::appears-as-list = 0
+GtkComboBoxEntry::shadow_type = GTK_SHADOW_NONE
+GtkComboBoxEntry::appears-as-list = 1
+GtkDialog::action-area-border = 1
+GtkDialog::button-spacing = 1
+GtkDialog::content-area-border = 1
+GtkExpander::expander-size = 8
+GtkMenu::horizontal-padding = 1
+GtkMenu::vertical-padding = 2
+GtkMenu::arrow-scaling = 0.2
+GtkMenuBar::shadow_type = GTK_SHADOW_NONE
+GtkMenuBar::internal-padding = 2
+GtkMenuItem::arrow-scaling = 0.2
+GtkNotebook::tab-overlap = 4
+GtkProgressBar::min-horizontal-bar-height = 20
+GtkProgressBar::min-horizontal-bar-width = 80
+GtkProgressBar::min-vertical-bar-height = 80
+GtkProgressBar::min-vertical-bar-width = 20
+GtkPaned::handle-size = 4
+GtkRange::stepper-size = 15
+GtkRadioButton::indicator-size = 12
+GtkScale::slider-length = 16
+GtkScale::trough-side-details = 0
+GtkScrollbar::min_slider_length	= 70
+GtkScrollbar::has_secondary_backward_stepper = 0
+GtkScrollbar::has_secondary_forward_stepper = 0
+GtkScrollbar::has_backward_stepper = 1
+GtkScrolledWindow::scrollbar-spacing = 0
+GtkScrolledWindow::scrollbars-within-bevel = 1
+GtkStatusbar::shadow_type = GTK_SHADOW_NONE
+GtkToolbar::space-size = 0
+GtkToolbar::internal-padding = 0
+GtkTreeView::expander-size = 8
+GtkTreeView::vertical-separator = 0
+GtkTreeView::allow-rules = 1
+GtkTreeView::even-row-color = "#292929"
+GtkTreeView::odd-row-color = "#2b2b2b"
+GtkTreeView::tree-line-width = 0
+GtkTreeView::grid-line-width = 0
+GtkWidget::focus-line-width = 0
+WnckTasklist::fade-overlay-rect = 0
+GtkWidget::link_color = "#0083b7"
+GtkHTML::link-color = "#0083b7"
+GtkIMHtml::hyperlink-color = "#0083b7"
+GtkWidget::visited-link-color = "#bc1449"
+GtkHTML::visited-link-color = "#bc1449"
+xthickness = 2
+ythickness = 2
+fg[NORMAL] = "#616161"
+fg[PRELIGHT] = "#616161"
+fg[SELECTED] = "#616161"
+fg[ACTIVE] = "#616161"
+fg[INSENSITIVE] = "#333333"
+bg[NORMAL] = "#333333"
+bg[PRELIGHT] = "#333333"
+bg[SELECTED] = "#333333"
+bg[INSENSITIVE] = "#333333"
+bg[ACTIVE] = "#333333"
+base[NORMAL] = "#292929"
+base[PRELIGHT] = "#292929"
+base[ACTIVE] = "#222222"
+base[SELECTED] = "#222222"
+base[INSENSITIVE] = "#292929"
+text[NORMAL] = "#616161"
+text[PRELIGHT] = "#616161"
+text[ACTIVE] = "#0984ff"
+text[SELECTED] = "#0984ff"
+text[INSENSITIVE] = "#404040"
+engine "aurora" 
+{
+menubarstyle    = 1
+curvature       = 0.3	  
+arrowsize       = 0.2
+old_arrowstyle  = FALSE
+animation       = TRUE
+}
+}
+class "GtkWidget" style "gtkwidget"
+
+style "gtkbuttons" = "gtkwidget"
+{
+xthickness = 2
+ythickness = 2
+bg[NORMAL] = "#333333"
+bg[PRELIGHT] = "#333333"
+bg[INSENSITIVE] = "#333333"
+bg[SELECTED] = "#1d1d1d"
+bg[ACTIVE] = "#2b2b2b"
+}
+class "GtkButton" style "gtkbuttons"
+
+style "gtktoolbar" = "gtkwidget"
+{
+xthickness = 0
+ythickness = 0
+engine "pixmap"
+{
+image
+{
+function = BOX
+file = ".pixbuf/toolbarbackground.png"
+border = {0,0,0,0}
+stretch	= TRUE
+}
+image
+{
+function = HANDLE
+file = ".pixbuf/toolbarbackground.png"
+border = {0,0,0,0}
+stretch = TRUE
+overlay_file = ".pixbuf/toolbarhandlev.png"
+overlay_stretch	= FALSE
+orientation	= HORIZONTAL
+}
+image
+{
+function = HANDLE
+file = ".pixbuf/toolbarbackground.png"
+border = {0,0,0,0}
+stretch = TRUE
+overlay_file = ".pixbuf/toolbarhandleh.png"
+overlay_stretch	= FALSE
+orientation	= VERTICAL
+}
+}
+}
+class "GtkToolbar"   style "gtktoolbar" 
+class "*BonoboDockItem" style "gtktoolbar"
+widget_class "*BonoboDockItem" style "gtktoolbar"
+class "*HandleBox" style "gtktoolbar"
+widget_class "*HandleBox" style "gtktoolbar"
+class "*Toolbar" style "gtktoolbar"
+widget_class "*Toolbar" style "gtktoolbar"
+
+
+style "gtkmenubar" = "gtkwidget"
+{
+engine "pixmap"
+{
+image
+{
+function = BOX
+file = ".pixbuf/menubarbackground.png"
+border = {0,0,0,0}
+stretch	= TRUE
+}
+}
+}
+class "GtkMenuBar" style "gtkmenubar"
+
+style "listheaders" = "gtkwidget"
+{
+xthickness = 2
+ythickness = 0
+text[ACTIVE] = "#616161"
+text[SELECTED] = "#616161"
+fg[INSENSITIVE] = "#292929"
+engine "pixmap" 
+{
+image
+{
+function = BOX
+recolorable = TRUE
+shadow = OUT
+state = NORMAL
+file = ".pixbuf/listheadernormal.png"
+border = {9,9,9,9}
+stretch = TRUE
+}
+image
+{
+function = BOX
+recolorable = TRUE
+state = PRELIGHT
+file = ".pixbuf/listheaderprelight.png"
+border = {9,9,9,9}
+stretch = TRUE
+}
+image
+{
+function = BOX
+recolorable = TRUE
+state = INSENSITIVE
+file = ".pixbuf/listheaderdisabled.png"
+border = {9,9,9,9}
+stretch = TRUE
+}
+image
+{
+function = BOX
+recolorable = TRUE
+state = ACTIVE
+file = ".pixbuf/listheaderpressed.png"
+border = {9,9,9,9}
+stretch = TRUE
+}
+image
+{
+function = BOX
+recolorable = TRUE
+state = SELECTED
+file = ".pixbuf/listheaderpressed.png"
+border = {9,9,9,9}
+stretch = TRUE
+}
+}
+}
+widget_class "*.<GtkTreeView>.<GtkButton>" style "listheaders"
+widget_class "*.<GtkCTree>.<GtkButton>" style "listheaders"
+widget_class "*.<GtkList>.<GtkButton>" style "listheaders"
+widget_class "*.<GtkCList>.<GtkButton>" style "listheaders"
+
+style "gtkmenuitem" = "gtkwidget"
+{
+xthickness = 0
+ythickness = 2
+fg[PRELIGHT] = "#0984ff"
+bg[SELECTED] = "#222222"#!think make it flat
+fg[ACTIVE] = "#0984ff"
+text[PRELIGHT] = "#0984ff"
+text[ACTIVE] = "#0984ff"
+}
+widget_class "*<GtkMenuBar>.<GtkMenuItem>*" style "gtkmenuitem"
+widget_class "*<GtkMenu>.<GtkMenuItem>*" style "gtkmenuitem"
+
+class "*GtkMenu*" style "gtkmenuitem"
+
+style "progressbar" {
+fg[NORMAL] = "#616161"
+fg[PRELIGHT] = "#323232"
+xthickness = 1
+ythickness = 1
+engine "pixmap"
+{
+image
+{
+function = BOX
+detail = "trough"
+file = ".pixbuf/progressbartrough.png"
+border = {2,2,2,2}
+stretch = TRUE
+orientation = HORIZONTAL
+}
+image
+{
+function = BOX
+detail = "bar"
+file = ".pixbuf/progressbar.png"
+border = {2,2,2,2}
+stretch = TRUE
+orientation = HORIZONTAL
+}
+image
+{
+function = BOX
+detail = "trough"
+file = ".pixbuf/progressbartrough.png"
+border = {2,2,2,2}
+stretch = TRUE
+orientation = VERTICAL
+}
+image
+{
+function = BOX
+detail = "bar"
+file = ".pixbuf/progressbar.png"
+border = {2,2,2,2}
+stretch = TRUE
+orientation = VERTICAL
+}
+}
+}
+class "GtkProgressBar" style "progressbar"
+
+style "gtknotebook" = "gtkwidget"
+{
+xthickness = 6
+ythickness = 4
+bg[NORMAL] = "#333333"#!think!must have the same color
+bg[SELECTED] = "#262626"
+bg[ACTIVE] = "#2e2e2e"
+}
+class "GtkNotebook" style "gtknotebook"
+
+style "gtkcheckbutton" = "gtkwidget"
+{
+xthickness = 2
+ythickness = 2
+bg[SELECTED] = "#363636"
+}
+class "GtkCheckButton" style "gtkcheckbutton"
+
+style "gtkradiobutton" = "gtkwidget"
+{
+xthickness = 2
+ythickness = 2
+bg[SELECTED] = "#363636"
+}
+class "GtkRadioButton" style "gtkradiobutton"
+
+style "gtkexpander" = "gtkwidget"
+{
+xthickness = 2
+ythickness = 2
+bg[SELECTED] = "#363636"
+}
+class "GtkExpander" style "gtkexpander"
+
+style "gtkcombobuttonarrow" = "gtkwidget"
+{
+text[ACTIVE] = "#616161"
+}
+widget_class "*<GtkComboBoxEntry>.<GtkButton>*" style "gtkcombobuttonarrow"
+
+style "gtkscrollbar" = "gtkwidget"
+{
+xthickness = 0
+ythickness = 0
+engine "pixmap"
+{
+image
+{
+function = BOX
+state = NORMAL
+detail = "trough"
+file = ".pixbuf/horizscrollbartrough.png"
+border = {20,20,3,3}
+stretch = TRUE
+orientation = HORIZONTAL
+}
+image
+{
+function = BOX
+state = NORMAL
+detail = "trough"
+file = ".pixbuf/verticalscrollbartrough.png"
+border = {3,3,20,20}
+stretch = TRUE
+orientation = VERTICAL
+}
+image
+{
+function = BOX
+state = ACTIVE
+detail = "trough"
+file = ".pixbuf/horizscrollbartrough.png"
+border = {20,20,3,3}
+stretch = TRUE
+orientation = HORIZONTAL
+}
+image
+{
+function = BOX
+state = ACTIVE
+detail = "trough"
+file = ".pixbuf/verticalscrollbartrough.png"
+border = {3,3,20,20}
+stretch = TRUE
+orientation = VERTICAL
+}
+image
+{
+function = BOX
+state = PRELIGHT
+detail = "trough"
+file = ".pixbuf/horizscrollbartrough.png"
+border = {20,20,3,3}
+stretch = TRUE
+orientation = HORIZONTAL
+}
+image
+{
+function = BOX
+state = PRELIGHT
+detail = "trough"
+file = ".pixbuf/verticalscrollbartrough.png"
+border = {3,3,20,20}
+stretch = TRUE
+orientation = VERTICAL
+}
+image
+{
+function = BOX
+state = INSENSITIVE
+detail = "trough"
+file = ".pixbuf/horizscrollbartrough.png"
+border = {20,20,3,3}
+stretch = TRUE
+orientation = HORIZONTAL
+}
+image
+{
+function = BOX
+state = INSENSITIVE
+detail = "trough"
+file = ".pixbuf/verticalscrollbartrough.png"
+border = {3,3,20,20}
+stretch = TRUE
+orientation = VERTICAL
+}
+image
+{
+function = SLIDER
+state = NORMAL
+file = ".pixbuf/horizscrollbar.png"
+border = {2,2,2,10}
+stretch = TRUE
+orientation = HORIZONTAL
+}
+image
+{
+function = SLIDER
+state = ACTIVE
+shadow = IN
+file = ".pixbuf/horizscrollbaractive.png"
+border = {2,2,2,10}
+stretch = TRUE
+orientation = HORIZONTAL
+}
+image
+{
+function = SLIDER
+state = PRELIGHT
+file = ".pixbuf/horizscrollbaractive.png"
+border = {2,2,2,10}
+stretch = TRUE
+orientation = HORIZONTAL
+}
+image
+{
+function = SLIDER
+state = INSENSITIVE
+file = ".pixbuf/horizscrollbar.png"
+border = {2,2,2,10}
+stretch = TRUE
+orientation = HORIZONTAL
+}
+image
+{
+function = SLIDER
+state = NORMAL
+file = ".pixbuf/verticalscrollbar.png"
+border = {2,10,2,3}
+stretch = TRUE
+orientation = VERTICAL
+}
+image
+{
+function = SLIDER
+state = ACTIVE
+shadow = IN
+file = ".pixbuf/verticalscrollbaractive.png"
+border = {2,10,2,3}
+stretch = TRUE
+orientation = VERTICAL
+}
+image
+{
+function = SLIDER
+state = PRELIGHT
+file = ".pixbuf/verticalscrollbaractive.png"
+border = {2,10,2,3}
+stretch = TRUE
+orientation = VERTICAL
+}
+image
+{
+function = SLIDER
+state = INSENSITIVE
+file = ".pixbuf/verticalscrollbar.png"
+border = {2,10,2,3}
+stretch = TRUE
+orientation = VERTICAL
+}
+image
+{
+function = STEPPER
+state = NORMAL
+file = ".pixbuf/verticalscrollbarstepperup.png"
+stretch = TRUE
+arrow_direction = UP
+}
+image
+{
+function = STEPPER
+state = PRELIGHT
+file = ".pixbuf/verticalscrollbarstepperup.png"
+stretch = TRUE
+arrow_direction = UP
+}
+image
+{
+function = STEPPER
+state = ACTIVE
+file = ".pixbuf/verticalscrollbarstepperuppress.png"
+stretch = TRUE
+arrow_direction = UP
+}
+image
+{
+function = STEPPER
+state = INSENSITIVE
+file = ".pixbuf/verticalscrollbarstepperupinsens.png"
+stretch = TRUE
+arrow_direction = UP
+}
+image
+{
+function = STEPPER
+state = NORMAL
+file = ".pixbuf/verticalscrollbarstepperdown.png"
+stretch = TRUE
+arrow_direction = DOWN
+}
+image
+{
+function = STEPPER
+state = PRELIGHT
+file = ".pixbuf/verticalscrollbarstepperdown.png"
+stretch = TRUE
+arrow_direction = DOWN
+}
+image
+{
+function = STEPPER
+state = ACTIVE
+file = ".pixbuf/verticalscrollbarstepperdownpress.png"
+stretch = TRUE
+arrow_direction = DOWN
+}
+image
+{
+function = STEPPER
+state = INSENSITIVE
+file = ".pixbuf/verticalscrollbarstepperdowninsens.png"
+stretch = TRUE
+arrow_direction = DOWN
+}
+image
+{
+function = STEPPER
+state = NORMAL
+file = ".pixbuf/horizscrollbarstepperright.png"
+stretch = TRUE
+arrow_direction = RIGHT
+}
+image
+{
+function = STEPPER
+state = PRELIGHT
+file = ".pixbuf/horizscrollbarstepperright.png"
+stretch = TRUE
+arrow_direction = RIGHT
+}
+image
+{
+function = STEPPER
+state = ACTIVE
+file = ".pixbuf/horizscrollbarstepperrightpress.png"
+stretch = TRUE
+arrow_direction = RIGHT
+}
+image
+{
+function = STEPPER
+state = INSENSITIVE
+file = ".pixbuf/horizscrollbarstepperrightinsens.png"
+stretch = TRUE
+arrow_direction = RIGHT
+}
+image
+{
+function = STEPPER
+state = NORMAL
+file = ".pixbuf/horizscrollbarstepperleft.png"
+stretch = TRUE
+arrow_direction = LEFT
+}
+image
+{
+function = STEPPER
+state = PRELIGHT
+file = ".pixbuf/horizscrollbarstepperleft.png"
+stretch	= TRUE
+arrow_direction = LEFT
+}
+image
+{
+function = STEPPER
+state = ACTIVE
+file = ".pixbuf/horizscrollbarstepperleftpress.png"
+stretch = TRUE
+arrow_direction = LEFT
+}
+image
+{
+function = STEPPER
+state = INSENSITIVE
+file = ".pixbuf/horizscrollbarstepperleftinsens.png"
+stretch = TRUE
+arrow_direction = LEFT
+}
+
+}
+}
+class "GtkScrollbar" style "gtkscrollbar"
+
+style "gtktooltip" = "gtkwidget"
+{
+xthickness = 3
+ythickness = 3
+fg[NORMAL] = "#0984ff"
+engine "pixmap"
+{
+image 
+{
+function = FLAT_BOX
+recolorable = TRUE
+file = ".pixbuf/tooltip.png"
+border = {2,2,2,2}
+stretch = TRUE
+}
+}
+}
+widget "gtk-tooltip*" style "gtktooltip"
+
+style "gtkspinbutton" = "gtkwidget"
+{
+xthickness = 2
+ythickness = 2
+text[PRELIGHT] = "#616161"
+text[ACTIVE] = "#616161"
+}
+class "GtkSpinButton" style "gtkspinbutton"
+
+
+

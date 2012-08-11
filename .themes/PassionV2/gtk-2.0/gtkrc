@@ -1,0 +1,17 @@
+# PassionV2 XFce-theme by PUNX69(punx69[at]gmx.net)
+
+###enable/disable icons on buttons###
+gtk-button-images = 0
+
+###enable menuicons
+gtk-menu-images = 1
+
+###icon size
+gtk-icon-sizes = "panel-menu=24,24:panel=24,24:gtk-dialog=48,48:gtk-button=16,16:gtk-large-toolbar=24,24"
+
+###Fast menus
+gtk-menu-drop-shadow = 0
+gtk-menu-shadow-delay = 0
+
+# What do you like lime or gray?
+include "gtkrc.gray"

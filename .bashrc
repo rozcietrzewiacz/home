@@ -7,20 +7,21 @@ if [[ $- != *i* ]] ; then
 fi
 
 
-HISTIGNORE="*xpdf*upw*:*xpdf*opw*:*goenc*:*xamisc*:*cd *echo -e *:*cd *printf"
-HISTSIZE=1400
+HISTIGNORE='*cd "`echo -e*:*cd *printf*' ## prevent mc garbage in history
 HISTCONTROL=ignoredups:erasedups
+HISTSIZE=1300
 LANG="pl_PL.UTF-8"
 LC_MESSAGES="C"
+LC_COLLATE="C"
 PATH=${PATH}:$HOME/bin # This has to be used with extreme caution! Monitor the contents of ~/bin
 XDG_DATA_HOME="$HOME/.config"
 BROWSER="$HOME/scripts/browser.sh"
 export BROWSER
 export HISTIGNORE
-export HISTSIZE
 export PATH
 export LANG
 export LC_MESSAGES
+export LC_COLLATE
 export XDG_DATA_HOME
 ##### kolorowy less!
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -52,12 +53,12 @@ shopt -s autocd  #will let you type .. for cd ..
 		 #and use any directory as a command to cd to it
 
 
-alias uekg="luit -encoding 'ISO 8859-2' ekg"
+#alias uekg="luit -encoding 'ISO 8859-2' ekg" ##boooring...
 alias rot13="tr a-zA-Z n-za-mN-ZA-M"
 alias cmus="TERM=xterm cmus"
-alias ssh="TERM=xterm ssh"
+alias ssh="TERM=xterm ssh" 
 alias cd..='cd ..'
-alias ..='cd ..'
+alias ..='cd ..' # "shopt autocd" is much more powerful
 alias man='LANG=C man'
 alias ll="ls -lhF"
 alias la="ls -lahF"
@@ -71,9 +72,11 @@ if [[ "$PS1" ]] ; then
 	 # echo /usr/local/sbin/rmcgroup >> /sys/fs/cgroup/cpu/release_agent && \
 fi
 
-Bn=/home/janek/fortune
-fortune -c 20% $Bn/bash_tip 15% $Bn/vit 25% $Bn/vim_tip 30% $Bn/sed_tip 10% $Bn/installed_stuff |\
+Bn=$HOME/fortune
+
+[ -d $Bn ] && fortune -c 20% $Bn/bash_tip 15% $Bn/vit 25% $Bn/vim_tip 30% $Bn/sed_tip 10% $Bn/installed_stuff |\
   sed -e '1 s/^.*\/\(.*\))$/\t--====::> \1 <::====--/g' \
   -e '1 s/^/\[44;1m/;1 s/$/\[0;0m/; 2d; s/\(^\|[[:space:]]\)\(#.*$\)/\[36m\1\2\[0m/g'
   echo
 
+alias dfh="df -h"

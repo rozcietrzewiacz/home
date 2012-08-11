@@ -1,0 +1,5 @@
+style "galeon" = "gtkwidget"
+{
+GaleonLocationEntry::secure-color = "#441d00"
+}
+class "GaleonLocationEntry" style "galeon"

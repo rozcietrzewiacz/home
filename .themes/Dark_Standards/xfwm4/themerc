@@ -1,0 +1,26 @@
+# Dark Standards
+# By Steve Bell
+# Based on Xubuntu Studio and the standard XFCE theme
+# Thanks to:
+#            Raphael Galvão, author of Xubuntu Studio
+#            Huw Wilkins, Ubuntulooks Quicksilver
+#            Cory Kontros, Ubuntulooks Quicksilver
+#            Andrea Cimitan, Ubuntulooks Quicksilver
+#            Olivier Fourdan, author of the standard XFCE theme
+
+active_text_color=#ffffff
+active_text_shadow_color=#000000
+button_layout=O|HMC
+button_offset=5
+button_spacing=2
+full_width_title=false
+maximized_offset=0
+inactive_text_color=#a9a9a9
+inactive_text_shadow_color=#000000
+show_app_icon=true
+title_alignment=center
+title_horizontal_offset=0
+title_shadow_active=true
+title_shadow_inactive=true
+title_vertical_offset=0
+title_vertical_offset_inactive=0

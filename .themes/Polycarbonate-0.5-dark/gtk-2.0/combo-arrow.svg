@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="16px"
+   height="16px"
+   id="svg1308"
+   sodipodi:version="0.32"
+   inkscape:version="0.43"
+   sodipodi:docbase="/home/emrah/.themes/Polycarbonate/gtk-2.0"
+   sodipodi:docname="combo-arrow.svg">
+  <defs
+     id="defs1310" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="22.627417"
+     inkscape:cx="8.86031"
+     inkscape:cy="5.9850727"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:grid-bbox="true"
+     inkscape:document-units="px"
+     inkscape:window-width="822"
+     inkscape:window-height="557"
+     inkscape:window-x="5"
+     inkscape:window-y="51" />
+  <metadata
+     id="metadata1313">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <path
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.57383013;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.69827586"
+       d="M 2.313378,5.2386038 C 2.312866,5.2421148 2.3137149,5.255033 2.313378,5.2585171 C 2.3132166,5.2619679 2.3133624,5.2750191 2.313378,5.2784303 C 2.3135711,5.2817954 2.3130061,5.295031 2.313378,5.2983436 C 2.3139292,5.3015973 2.3359731,5.3150683 2.336705,5.3182568 C 2.3376182,5.3213734 2.3356094,5.3351315 2.336705,5.33817 C 2.3379838,5.341124 2.3352419,5.3552202 2.336705,5.3580833 C 2.3383532,5.3608489 2.3581978,5.3753347 2.3600322,5.3779965 C 2.3622415,5.3804316 2.357634,5.3955976 2.3600322,5.3979097 L 7.8652375,10.674917 C 7.8676356,10.677228 7.8627117,10.6927 7.8652375,10.69483 C 7.8678841,10.696779 7.8858036,10.693062 7.8885645,10.69483 C 7.8943019,10.698008 7.9057637,10.712277 7.9118918,10.714743 C 7.9150434,10.715799 7.9319861,10.713863 7.9352188,10.714743 C 7.9453435,10.716337 7.9712586,10.734612 7.9818732,10.734657 C 7.992611,10.73419 8.0175388,10.716726 8.0285274,10.714743 C 8.0322048,10.713916 8.0481692,10.715738 8.0518546,10.714743 C 8.0628979,10.710774 8.0876339,10.70026 8.0985089,10.69483 C 8.1021018,10.69286 8.1182817,10.677046 8.121836,10.674917 C 8.1323631,10.668051 8.1584908,10.663281 8.1684903,10.655004 C 8.1717515,10.65209 8.1653075,10.638158 8.1684903,10.63509 L 13.580387,5.4377362 C 13.589935,5.4285309 13.595612,5.407739 13.603714,5.3979097 C 13.606252,5.3945768 13.624667,5.3813795 13.627041,5.3779965 C 13.629251,5.3745697 13.624997,5.3615473 13.627041,5.3580833 C 13.628918,5.3545884 13.648658,5.3416894 13.650368,5.33817 C 13.651909,5.3346327 13.648996,5.3218057 13.650368,5.3182568 C 13.651571,5.3147026 13.649337,5.3018965 13.650368,5.2983436 C 13.651227,5.2947982 13.673008,5.2819617 13.673696,5.2784303 C 13.674207,5.2749194 13.673358,5.2620011 13.673696,5.2585171 C 13.673857,5.2550662 13.673712,5.242015 13.673696,5.2386038 L 2.336705,5.2386038 L 2.313378,5.2386038 z "
+       id="rect1316" />
+  </g>
+</svg>
