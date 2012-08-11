@@ -7,9 +7,10 @@ if [[ $- != *i* ]] ; then
 fi
 
 
-HISTIGNORE='*cd "`echo -e*:*cd *printf*' ## prevent mc garbage in history
-HISTCONTROL=ignoredups:erasedups
-HISTSIZE=1300
+HISTIGNORE="*xpdf*upw*:*xpdf*opw*:*goenc*:*xamisc*:*cd *echo -e *:*cd *printf"
+HISTSIZE=1400
+HISTCONTROL=ignoreboth:erasedups
+## 'ignoreboth' = ignore duplicate lines or lines starting with space!
 LANG="pl_PL.UTF-8"
 LC_MESSAGES="C"
 LC_COLLATE="C"
@@ -18,6 +19,7 @@ XDG_DATA_HOME="$HOME/.config"
 BROWSER="$HOME/scripts/browser.sh"
 export BROWSER
 export HISTIGNORE
+export HISTSIZE
 export PATH
 export LANG
 export LC_MESSAGES
@@ -56,7 +58,7 @@ shopt -s autocd  #will let you type .. for cd ..
 #alias uekg="luit -encoding 'ISO 8859-2' ekg" ##boooring...
 alias rot13="tr a-zA-Z n-za-mN-ZA-M"
 alias cmus="TERM=xterm cmus"
-alias ssh="TERM=xterm ssh" 
+alias ssh="TERM=xterm ssh"
 alias cd..='cd ..'
 alias ..='cd ..' # "shopt autocd" is much more powerful
 alias man='LANG=C man'
@@ -79,4 +81,5 @@ Bn=$HOME/fortune
   -e '1 s/^/\[44;1m/;1 s/$/\[0;0m/; 2d; s/\(^\|[[:space:]]\)\(#.*$\)/\[36m\1\2\[0m/g'
   echo
 
+alias ll="LC_COLLATE=C ls --group-directories-first -lFA"
 alias dfh="df -h"
