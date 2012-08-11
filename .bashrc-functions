@@ -48,13 +48,13 @@ listusbdisks ()
     for dsk in ${@-/dev/sd?}
     do
         /sbin/udevadm info --query=path --name="$dsk" | grep --colour=auto -q usb || continue
-        echo "===== device $dsk is:"
+        echo -e "===== device \e[1m$dsk\e[0m is:"
         ( eval $(/sbin/udevadm info --query=property --name="$dsk" | grep "\(MODEL\|VENDOR\)_ID")
           [ "$ID_VENDOR_ID:$ID_MODEL_ID" == ":" ] && echo "Unknown" || \
 	    lsusb $VERBOSE -d "$ID_VENDOR_ID:$ID_MODEL_ID" 
-          /sbin/fdisk -l $dsk | grep --color=always "${dsk}[0-9]*"
+          /bin/lsblk -no NAME,SIZE,FSTYPE,MOUNTPOINT $dsk | sed "s/ \(\/[^ ]*$\)/ "$'\e[41m'"\1"$'\e[0m'"/"
 	)
-	grep -q "$dsk" /proc/mounts && echo "----- DEVICE IS MOUNTED ----" 
+	#grep -q "$dsk" /proc/mounts && echo "----- DEVICE IS MOUNTED ----" 
         echo
     done
 }
@@ -95,9 +95,11 @@ fetchrep ()
     echo "$REP" >| /tmp/unix_lastrep
 }
 
-#########################
+##########################
+### Short, handy ones: ###
 
-# Create a new directory and enter it
-function md() {
-  [[ $# = 1 ]] && mkdir -p "$1" && cd "$1"
-}
+psg () ## a handy semi-alias
+{ ps aux | grep $*; }
+
+md() # Create a new directory and enter it
+{  [[ $# = 1 ]] && mkdir -p "$1" && cd "$1"; }

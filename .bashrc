@@ -9,7 +9,8 @@ fi
 
 HISTIGNORE="*xpdf*upw*:*xpdf*opw*:*goenc*:*xamisc*:*cd *echo -e *:*cd *printf"
 HISTSIZE=1400
-HISTCONTROL=ignoredups:erasedups
+HISTCONTROL=ignoreboth:erasedups
+## 'ignoreboth' = ignore duplicate lines or lines starting with space!
 LANG="pl_PL.UTF-8"
 LC_MESSAGES="C"
 PATH=${PATH}:$HOME/bin # This has to be used with extreme caution! Monitor the contents of ~/bin
@@ -77,3 +78,4 @@ fortune -c 20% $Bn/bash_tip 15% $Bn/vit 25% $Bn/vim_tip 30% $Bn/sed_tip 10% $Bn/
   -e '1 s/^/\[44;1m/;1 s/$/\[0;0m/; 2d; s/\(^\|[[:space:]]\)\(#.*$\)/\[36m\1\2\[0m/g'
   echo
 
+alias ll="LC_COLLATE=C ls --group-directories-first -lFA"
