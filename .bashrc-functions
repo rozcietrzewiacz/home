@@ -106,4 +106,16 @@ reminder_cd()
 }
 #użycie: alias cd="reminder_cd"
 
-
+function dotcl-switch
+{
+    if [[ $# = 0 ]]; then
+        cat << EOM
+    usage: $0 <dotcloud_account_name>
+    available accounts:
+$( find ~/.dotcloud/ACC -mindepth 1 -maxdepth 1 -type d -exec basename {} \; )
+EOM
+    else
+        [[ -d ~/.dotcloud/ACC/$1 ]] && echo "Switching to $1" && \
+        rm ~/.dotcloud/dotcloud* && cp -vf ~/.dotcloud/ACC/$1/dotcloud* ~/.dotcloud/
+    fi
+}
