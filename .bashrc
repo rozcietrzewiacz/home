@@ -79,3 +79,13 @@ fi
 #  echo
 
 alias dfh="df -h"
+
+# {{{
+# Node Completion - Auto-generated, do not touch.
+################################## ^^ FU. Don't touch yourself.
+shopt -s progcomp
+for f in ~/.node-completion/* ; do
+  #f="$HOME/.node-completion/$f"
+  test -f "$f" && . "$f"
+done
+# }}}
