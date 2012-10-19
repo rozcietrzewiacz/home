@@ -110,6 +110,7 @@ fetchrep ()
     STR="${STR} ${REP} </span></b>"
     echo "mytextbox.text = \"$STR\"" | awesome-client
     echo "$REP" >| /tmp/unix_lastrep
+}
 #### 
 #### Przypomnienie odpalane przy wejściu do katalogu
 ### źródło: http://unix.stackexchange.com/questions/18532/show-message-when-cd-into-specific-directory/18533#18533
@@ -140,3 +141,4 @@ psg () ## a handy semi-alias
 
 md() # Create a new directory and enter it
 {  [[ $# = 1 ]] && mkdir -p "$1" && cd "$1"; }
+
