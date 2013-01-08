@@ -123,3 +123,13 @@ set showmode
 se softtabstop=4
 se shiftwidth=4
 se expandtab
+
+" To avoid having *~ files net to original in their dirs
+set backupdir =~/.vim/backups_dir,.
+set directory=~/.vim/backups_dir,.
+
+"############## DIR-listing (netrw) mode setup
+        let g:netrw_preview   = 1
+        let g:netrw_liststyle = 3
+        let g:netrw_winsize   = 30
+

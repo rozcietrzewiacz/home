@@ -76,7 +76,7 @@ fi
 
 Bn=$HOME/fortune
 
-[ -d $Bn ] && fortune -c 20% $Bn/bash_tip 15% $Bn/vit 25% $Bn/vim_tip 30% $Bn/sed_tip 10% $Bn/installed_stuff |\
+[ -d $Bn ] && fortune -c 20% $Bn/bash_tip 5% $Bn/vit 15% $Bn/vim_tip 20% $Bn/sed_tip 40% $Bn/system |\
   sed -e '1 s/^.*\/\(.*\))$/\t--====::> \1 <::====--/g' \
   -e '1 s/^/\[44;1m/;1 s/$/\[0;0m/; 2d; s/\(^\|[[:space:]]\)\(#.*$\)/\[36m\1\2\[0m/g'
   echo

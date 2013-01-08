@@ -503,6 +503,14 @@ clientkeys = awful.util.table.join(
 
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
     awful.key({ modkey,           }, "n",      function (c) c.minimized = not c.minimized    end),
+    --------------- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    awful.key({ modkey }, "Tab", function ()
+     -- If you want to always position the menu on the same place set coordinates
+        awful.menu.menu_keys.down = { "Down", "Tab" }
+        ---awful.menu.menu_keys.exec = { odkey }
+        local cmenu = awful.menu.clients({width=245}, { keygrabber=true, coords={x=525, y=330} })
+        end),
+    --------------- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     awful.key({ modkey }, "m",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
