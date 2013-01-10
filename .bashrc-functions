@@ -123,7 +123,28 @@ fetchrep ()
     echo "mytextbox.text = \"$STR\"" | awesome-client
     echo "$REP" >| /tmp/unix_lastrep
 }
+#### 
+#### Przypomnienie odpalane przy wejściu do katalogu
+### źródło: http://unix.stackexchange.com/questions/18532/show-message-when-cd-into-specific-directory/18533#18533
+reminder_cd() 
+{
+    cd $@ && [ -f ".cd-reminder" ] && cat .cd-reminder
+}
+#użycie: alias cd="reminder_cd"
 
+function dotcl-switch
+{
+    if [[ $# = 0 ]]; then
+        cat << EOM
+    usage: $0 <dotcloud_account_name>
+    available accounts:
+$( find ~/.dotcloud/ACC -mindepth 1 -maxdepth 1 -type d -exec basename {} \; )
+EOM
+    else
+        [[ -d ~/.dotcloud/ACC/$1 ]] && echo "Switching to $1" && \
+        rm ~/.dotcloud/dotcloud* && cp -vf ~/.dotcloud/ACC/$1/dotcloud* ~/.dotcloud/
+    fi
+}
 ##########################
 ### Short, handy ones: ###
 
@@ -132,3 +153,4 @@ psg () ## a handy semi-alias
 
 md() # Create a new directory and enter it
 {  [[ $# = 1 ]] && mkdir -p "$1" && cd "$1"; }
+
