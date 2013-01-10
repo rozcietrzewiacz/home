@@ -43,6 +43,7 @@ function mv_p ()
 listusbdisks () 
 {
     [[ "x$1" == "x-v" ]] && shift && local VERBOSE=-v
+    DYSKI=""
     for dsk in ${@-/dev/sd?}
     do
         /sbin/udevadm info --query=path --name="$dsk" | grep --colour=auto -q usb || continue
@@ -51,10 +52,21 @@ listusbdisks ()
           [ "$ID_VENDOR_ID:$ID_MODEL_ID" == ":" ] && echo "Unknown" || \
 	    lsusb $VERBOSE -d "$ID_VENDOR_ID:$ID_MODEL_ID" 
           /bin/lsblk -no NAME,SIZE,FSTYPE,MOUNTPOINT $dsk | sed "s/ \(\/[^ ]*$\)/ "$'\e[41m'"\1"$'\e[0m'"/"
-	)
+	) && DYSKI="$DYSKI $dsk"
 	#grep -q "$dsk" /proc/mounts && echo "----- DEVICE IS MOUNTED ----" 
         echo
     done
+    if [[ "x$DYSKI" != "x" ]]; then
+        montowalne=$( lsblk -no KNAME,FSTYPE $DYSKI | awk '{ if ($2 != "") print $1;}' )
+        echo "Wybierz partycję do zamontowania:"
+        select dysk in $montowalne "Anuluj montowanie"
+        do
+            [[ "$dysk" == "Anuluj montowanie" ]] && break
+            pmount $dysk
+            echo "/media/$dysk"
+            break
+        done
+    fi
 }
 
 

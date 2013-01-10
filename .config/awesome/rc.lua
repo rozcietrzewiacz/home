@@ -774,7 +774,8 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 
 -- AUTOSTART ------------
 --  => [Ogolnie autostart powinien byc raczej u uzytkownika...]
-os.execute( "pgrep conky || conky -d -c ~/.conkyrc-awesome &" )
+os.execute( "pgrep conky &>/dev/null || conky -d -c ~/.conkyrc-awesome &" )
+os.execute( "pgrep xfsettings &>/dev/null || /usr/bin/xfsettingsd" )
 -- os.execute( "pgrep xcompmgr || /usr/local/bin/xcompmgr_MY2 -C -c -r2 &" )
 -- os.execute( "pgrep xcompmgr || xcompmgr -c -C -n &" )
 os.execute( "/usr/bin/xsetroot -cursor_name arrow &" ) -- circle &" )
