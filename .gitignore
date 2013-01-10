@@ -26,7 +26,8 @@
 !/.config/awesome/
 !/.config/Terminal
 !/.config/compiz
-!/.config/gtk-2.0
+!/.config/gtk-2.0/
+/.config/gtk-2.0/gtkfilechooser.ini
 !/.config/luakit/
 /.config/luakit/*
 !/.config/luakit/rc.lua
