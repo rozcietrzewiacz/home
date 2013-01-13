@@ -133,3 +133,10 @@ set directory=~/.vim/backups_dir,.
         let g:netrw_liststyle = 3
         let g:netrw_winsize   = 30
 
+
+" Fixes screen<->vim interaction - per
+" http://vim.wikia.com/wiki/GNU_Screen_integration
+if match($TERM, "screen")!=-1
+  set term=xterm
+endif
+
