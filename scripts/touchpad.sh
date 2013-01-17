@@ -4,37 +4,52 @@
 #
 # Written by /rozcietrzewiacz/ (jankeso -at- gmail com)
 #
+# TODO:
+#  - Auto-detect "TPad" and "Joy" parameter values
 
-TPad='xinput --list-props Mouse1 | grep "Device Enabled.*:.*1" >/dev/null'
-Joy='xinput --list-props Mouse2 | grep "Device Enabled.*:.*1" >/dev/null'
-TPad_on='xinput --set-prop Mouse1 "Device Enabled" 1'
-Joy_on='xinput --set-prop Mouse2 "Device Enabled" 1'
-TPad_off='xinput --set-prop Mouse1 "Device Enabled" 0'
-Joy_off='xinput --set-prop Mouse2 "Device Enabled" 0'
+
+########## Configuration:
+## set these values to relevant device names,
+## as recognised by `xinput list`
+
+TPad="Mouse0"
+Joy="PS/2 Generic Mouse"
+
+##############################################
+##############################################
+
+
+isEnabled() {
+   xinput list-props "$1" | grep -q "Device Enabled.*:.*1"
+}
+
+setState() {
+   xinput set-prop "$1" "Device Enabled" $2
+}
 
 case "$1" in
 	tt) # Toggle Touchpad
-	  eval $TPad && eval $TPad_off  || eval $TPad_on 
+	  isEnabled "$TPad" && setState "$TPad" 0 || setState "$TPad" 1 
 	;;
 
 	tj) # Toggle Joy (TrackPoint)
-	  eval $Joy  && eval $Joy_off || eval $Joy_on
+	  isEnabled "$Joy" && setState "$Joy" 0 || setState "$Joy" 1 
 	;;
 
 	ton) # Touchpad ON
-	  eval $TPad_on
+	  setState "$TPad" 1
 	;;
 
 	jon) # Joy ON
-	  eval $Joy_on
+	  setState "$Joy" 1
 	;;
 
 	toff) # Touchpad OFF
-	  eval $TPad_off
+	  setState "$TPad" 0
 	;;
 
 	joff) # Joy OFF
-	  eval $Joy_off
+	  setState "$Joy" 0
 	;;
 	
 	circ|*) # CIRCulate Touchpad/Joy states in order:
@@ -43,11 +58,12 @@ case "$1" in
 		#  2    |    on    | off
 		#  3    |   off    | off
 		#  4    |   off    |  on
-	  if eval $TPad
+	  if isEnabled "$TPad"
 	  then
-		  eval $Joy && eval $Joy_off || eval $TPad_off
+	          isEnabled "$Joy" && setState "$Joy" 0 || setState "$TPad" 0 
 	  else
-		  eval $Joy && eval $TPad_on || eval $Joy_on
+	          isEnabled "$Joy" && setState "$TPad" 1 || setState "$Joy" 1 
 	  fi
 	;;
 esac
+
