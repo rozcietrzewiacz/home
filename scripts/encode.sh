@@ -21,7 +21,9 @@ function usage ()
 	cat << EOF
 	Użycie: $0 <wykonawca> <album> [ścieżka]
 
-	Zgrywa płytę CD na mp3 za pomocą libcdio-paranoia. Tytuły kolejnych utworów sczytuje ze standardowego wejścia linia po linii. AUTOMATYCZNIE TWORZY STRUKTURĘ KATALOGÓW <wykonawca>/<album>.
+	Zgrywa płytę CD na mp3 za pomocą libcdio-paranoia. Tytuły kolejnych utworów czyta ze standardowego wejścia linia po linii. 
+        AUTOMATYCZNIE TWORZY STRUKTURĘ KATALOGÓW: <wykonawca>/<album>.
+        Założenie: płyta umieszczona w jedynym napędzie, lub domyślnym dla libcdio-paranoia.
 	
 	Parametry:
 	<wykonawca>,<album>	- tajemnicze zaklęcia

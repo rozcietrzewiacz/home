@@ -43,21 +43,6 @@ layouts =
     awful.layout.suit.spiral.dwindle	-- 7
 }
 
--- Table of clients that should be set floating. The index may be either
--- the application class or instance. The instance is useful when running
--- a console app in a terminal like (Music on Console)
---    xterm -name mocp -e mocp
---floatapps =
---{
-    -- by class
---    ["MPlayer"] = true,
---    ["pinentry"] = true,
---    ["gimp"] = true,
-    -- by instance
---    ["mocp"] = true,
---    ["ida"] = true
---}
-
 -- Define if we want to use titlebar on all applications.
 titlebars_all = false
 
@@ -71,26 +56,6 @@ apptitles =
 -- NIE na rady (brak class/	["VLC media player"] = { size = 14, position = "top"   },
 }
 
-
--- Applications to be moved to a pre-defined tag by class or instance.
--- Use the screen and tags indices.
---apptags =
---{
-    -- ["Conky"] = { screen = 1, tag = 9 }
-    --
---    ["kate"] 	= { screen = 1, tag = 1 },
---    ["opera"] 	= { screen = 1, tag = 2 },
---    ["chrome"] 	= { screen = 1, tag = 2 },
---    ["midori"] 	= { screen = 1, tag = 2 },
---    ["gecko"] 	= { screen = 1, tag = 2 },	-- ("gecko", "Firefox-bin") -> Firefox
---    ["urxb"] 	= { screen = 1, tag = 3 },
---    ["MATLAB"]	= { screen = 1, tag = 4 },
---    ["com.mathworks.mde.desk.MLMainFrame"] = { screen = 1, tag = 4 }, -- Matlab - okno gl.
---    ["matlab"]	= { screen = 1, tag = 4 },
-    -- !! Tu można dać widzety - na przykład tak:
---    ["WIDGEee"]	= { screen = 1, tag = 6 }	-- widzety wszystkie (NA PRZYSZLOSC TEZ!)
---}
--- }}}
 
 -- {{{ Tags
 -- Define tags table.
@@ -135,11 +100,10 @@ myawesomemenu = {
 
 dofile( os.getenv( "HOME" ) .. "/.config/awesome/menu.lua" )
 mymainmenu = awful.menu({ items = { 
-		  { "open terminal", terminal },
-		  { "opera"   , "opera" },
 		  { " :browsers:" , menbrow },
 		  { " :editors:"  , menedit },
 		  { " :fileUtil:" , menfile },
+		  { " :dev: "     , mendev },
 		  { " :media:"    , menmedia },
 		  { " :misc:"     , menmisc },
 		  { " :im/irc:"   , menirc },
@@ -585,32 +549,49 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
-      properties = { floating = true } },
-    { rule = { instance = "kate" },
-      properties = { tag = tags[1][1] } },
+               properties = { floating = true } },
+--    { rule = { instance = "kate" },
+--      properties = { tag = tags[1][1] } },
     { rule = { class = "OpenOffice.org 3.2" },
-      properties = { tag = tags[1][1] } },
+               properties = { tag = tags[1][1] } },
     { rule = { instance = "opera" },
-      properties = { tag = tags[1][2] } },
+               properties = { tag = tags[1][2] } },
     { rule = { class = "Firefox" },
-      properties = { tag = tags[1][2] } },
+               properties = { tag = tags[1][2] } },
     { rule = { instance = "chrome" },
-      properties = { tag = tags[1][2] } },
+               properties = { tag = tags[1][2] } },
     { rule = { instance = "iron" },
-      properties = { tag = tags[1][2] } },
+               properties = { tag = tags[1][2] } },
     { rule = { instance = "midori" },
-      properties = { tag = tags[1][2] } },
+               properties = { tag = tags[1][2] } },
     { rule = { instance = "urxb" },
-      properties = { tag = tags[1][3] } },
+               properties = { tag = tags[1][3] } },
     { rule = { class = "gimp" },
-      properties = { floating = true } },
+               properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
     { rule = { class = "Adl" },
-      properties = { floating = true } },
+               properties = { floating = true } },
+    { rule = { class = "Eclipse" },
+               properties = { tag = tags[1][4] } },
 }
 -- }}}
+-- Table of clients that should be set floating. The index may be either
+-- the application class or instance. The instance is useful when running
+-- a console app in a terminal like (Music on Console)
+--    xterm -name mocp -e mocp
+--floatapps =
+--{
+    -- by class
+--    ["MPlayer"] = true,
+--    ["pinentry"] = true,
+--    ["gimp"] = true,
+    -- by instance
+--    ["mocp"] = true,
+--    ["ida"] = true
+--}
+
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.

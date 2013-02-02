@@ -9,9 +9,9 @@ Q="${2:-medium}"
 mkdir "$TMPDIR"
 pushd "$TMPDIR"
 
-get_flash_videos -r "$Q" "$1"
+FILE=$( tempfile -d . )
+get_flash_videos -f $FILE -r "$Q" "$1"
 
-FILE="`ls`"
 echo "===== FILE: $FILE ======"
 AUDEXT=`ffprobe "$FILE" 2>&1 | sed -n "s/.*Audio: \([a-z0-9]*\), .*/\1/p"`
 echo "====== audio extension: $AUDEXT"

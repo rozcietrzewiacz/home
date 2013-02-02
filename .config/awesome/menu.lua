@@ -14,8 +14,12 @@ menedit = {
 	{ "kate"     , "/usr/bin/kate" }
 }
 
+mendev = {
+        { "eclipse",    "eclipse-3.7",  "/usr/lib/eclipse-3.7/icon.xpm" },
+        { "CrossStudio", "/opt/crossworks_for_arm_3.0/bin/crossstudio", "/opt/crossworks_for_arm_3.0/bin/CrossWorksIcon48x48.png" }
+}
+
 menmisc = {
-        { "CrossStudio", "/opt/crossworks_for_arm_3.0/bin/crossstudio", "/opt/crossworks_for_arm_3.0/bin/CrossWorksIcon48x48.png" },
 	{ "Muz-aurel @t", terminal .. " -e /home/janek/.scripts/aurel_muza.sh" },
 	{ "VYM"  , "vym", "/usr/share/vym/icons/vym-16x16.png"}
 }

@@ -63,7 +63,9 @@ listusbdisks ()
         do
             [[ "$dysk" == "Anuluj montowanie" ]] && break
             pmount $dysk
-            echo "/media/$dysk"
+            echo -n "$dysk mounted at "
+            echo -n "/media/$dysk" | xclip -f 
+            echo " (path coppied to clipboard)"
             break
         done
     fi
