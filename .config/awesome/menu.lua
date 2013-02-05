@@ -52,7 +52,6 @@ menfile = {
 }
 
 myawesomemenu = {
-   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
    { "restart", awesome.restart },
    { "QUIT", awesome.quit }
 }
