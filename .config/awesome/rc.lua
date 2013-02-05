@@ -560,10 +560,11 @@ for i = 1, keynumber do
                   end),
         awful.key({ modkey, "Shift" }, "#" .. i + 9,
                   function ()
-                      if client.focus and tags[client.focus.screen][i] then
-                          awful.client.movetotag(tags[client.focus.screen][i])
+                      local sc = client.focus.screen
+                      if client.focus and tags[sc][i] then
+                          awful.client.movetotag(tags[sc][i])
 			  -- MYMOD: przełącz tam, gdzie przeniosłeś
-			  awful.tag.viewonly(tags[client.focus.screen][i])
+			  awful.tag.viewonly(tags[sc][i])
                       end
                   end),
         awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
@@ -602,7 +603,13 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
                      keys = clientkeys,
-                     buttons = clientbuttons } },
+                     buttons = clientbuttons },
+--XXX mialo otwierac nowe okna zawsze na bieżącym tagu, ale nie działa
+--      callback = function(c)
+--            c.screen = mouse.screen
+--            c:tags({ awful.tag.selected(mouse.screen) }) 
+--            end
+                 },
     { rule = { class = "MPlayer" },
                properties = { floating = true } },
 --    { rule = { instance = "kate" },
