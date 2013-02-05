@@ -620,7 +620,10 @@ awful.rules.rules = {
     { rule = { instance = "midori" },
                properties = { tag = tags[1][2] } },
     { rule = { instance = "urxb" },
-               properties = { tag = tags[1][3] } },
+               callback = function(c)
+                   c.screen = mouse.screen
+                   c:tags({ tags[c.screen][3] })
+               end},
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
