@@ -1,0 +1,149 @@
+! Xft settings ---------------------------------------------------------------
+
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+!Xft.hinting:    true
+!Xft.hintstyle:  hintslight
+
+xterm*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
+!xterm*reverseVideo:	true
+
+urxvt*scrollBar:        false
+!urxvt*borderLess:	true  ## broken(?)
+urxvt*internalBorder:	0
+urxvt*inheritPixmap:	true
+urxvt*blurRadius:	6x6
+urxvt*tintColor:       	#36a6a6
+urxvt*fading:	        59
+urxvt*scrollTtyOutput:	False
+urxvt*scrollTtyKeypress:True
+urxvt*scrollWithBuffer:	True
+urxvt*visualBell:	false
+urxvt*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
+urxvt*reverseVideo:	true
+urxvt*geometry:		85x27
+urxvt*background:	white
+urxvt*foreground:	black
+!urxvt*urlLauncher:	/usr/bin/chromium
+urxvt*urlLauncher:	/home/janek/scripts/browser.sh
+urxvt*perl-ext-common:  matcher
+urxvt*perl-ext:		confirm-paste
+urxvt.cutchars:         `()'*<>[]{|}"
+urxvt*matcher.button:   1
+!urxvt*perl-ext:		tabbed	### używać urxb zamiast tego
+
+urxb*scrollBar:        false
+!urxb*borderLess:	true ### BROKEN
+urxb*inheritPixmap:	true
+urxb*tintColor:       	#909090
+urxb*fading:	        49
+urxb*scrollTtyOutput:	False
+urxb*scrollTtyKeypress:True
+urxb*scrollWithBuffer:	True
+urxb*visualBell:	false
+urxb*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
+urxb*reverseVideo:	true
+urxb*jumpScroll:	true
+urxb*skipScroll:	true
+urxb*termName:		xterm
+!urxb*urlLauncher:	/usr/bin/chromium
+urxb*urlLauncher:	/home/janek/scripts/browser.sh
+urxb*perl-ext-common:  matcher,confirm-paste
+urxb*perl-ext:		tabbed
+urxb*matcher.button:   1
+
+!to jakimś sposobem jest dla wszystkich URxvt...
+URxvt*tabbed.tab-bg:	8
+URxvt*tabbed.tabbar-fg:	7
+URxvt*perl-ext-common:  matcher,confirm-paste
+URxvt*secondaryScroll:  true
+
+URUK*scrollBar:        false
+URUK*borderLess:	true
+URUK*inheritPixmap:	true
+URUK*tintColor:       	#212191
+!89bb33
+URUK*fading:	        39
+URUK*scrollTtyOutput:	False
+URUK*scrollTtyKeypress:True
+URUK*scrollWithBuffer:	True
+URUK*visualBell:	false
+URUK*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
+URUK*reverseVideo:	true
+URUK*jumpScroll:	true
+URUK*skipScroll:	true
+URUK*termName:		linux
+
+*Background: #2A2121
+*Foreground: #F0DFAF
+*BorderColor:     #340E0E
+!*cursorColor:     #340E0E
+*Cursor:     arrow
+
+xclock*update:     1
+xclock*Mode:       analog
+!xclock*Background: #222222
+!#3F3F3F
+!xclock*Border:     #3F3F3F
+!xclock*Foreground: #F0DFAF
+xclock*geometry:   220x240+0+18
+
+yeahconsole*term:	        uxterm	
+yeahconsole*xOffset:		10
+yeahconsole*screenWidth:	1004
+yeahconsole*secondaryScreen:	True
+yeahconsole*aniDelay:              11
+yeahconsole*stepSize:              5
+yeahconsole*toggleKey:		Win+F12
+yeahconsole*keySmaller:		Win+PageDown
+yeahconsole*keyBigger:		Win+PageUp
+yeahconsole*keyFull:		Win+F11
+yeahconsole*consoleHeight:	30
+yeahconsole*font:		-*-terminal-*-*-*-*-10-*-*-*-*-*-*-*
+yeahconsole*perl-ext:		tabbed
+yeahconsole*scrollTtyOutput:	False
+yeahconsole*scrollTtyKeypress:	True
+yeahconsole*inheritPixmap:	true
+yeahconsole*scrollBar:		false
+
+XTerm*saveLines: 0
+XTerm*vt100.translations: #override \n\
+  Ctrl <Btn4Down>: string(0x1b) string("[25S") \n\
+  Lock Ctrl <Btn4Down>: string(0x1b) string("[25S") \n\
+  Lock @Num_Lock Ctrl <Btn4Down>: string(0x1b) string("[25S") \n\
+  @Num_Lock Ctrl <Btn4Down>: string(0x1b) string("[25S") \n\
+  <Btn4Down>: string(0x1b) string("[5S") \n\
+  Ctrl <Btn5Down>: string(0x1b) string("[25T") \n\
+  Lock Ctrl <Btn5Down>: string(0x1b) string("[25T") \n\
+  Lock @Num_Lock Ctrl <Btn5Down>: string(0x1b) string("[25T") \n\
+  @Num_Lock Ctrl <Btn5Down>: string(0x1b) string("[25T") \n\
+  <Btn5Down>: string(0x1b) string("[5T") \n\
+  Shift <KeyPress> Prior: string(0x1b) string("[25S") \n\
+  Shift <KeyPress> Next: string(0x1b) string("[25T") \n
+
+
+!!! zenburn color scheme
+xterm*color0:         #353535
+xterm*color8:         #666666
+!red
+xterm*color1:         #AE4747
+xterm*color9:         #EE6363
+!green
+xterm*color2:         #556B2F
+xterm*color10:        #9ACD32
+!brown/yellow
+xterm*color3:         #DAA520
+xterm*color11:        #FFC125
+!blue
+xterm*color4:         #6F99B4
+xterm*color12:        #7C96B0
+!magenta
+xterm*color5:         #8B7B8B
+xterm*color13:        #D8BFD8
+!cyan
+xterm*color6:         #A7A15E
+xterm*color14:        #F0E68C
+!white
+xterm*color7:         #DDDDDD
+xterm*color15:        #FFFFFF

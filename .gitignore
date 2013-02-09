@@ -5,6 +5,7 @@
 !/.gitignore
 !/.toprc
 !/.vimrc
+!/.Xdefaults
 !/scripts/
 /scripts/*
 !/scripts/analyse-x86.sh
