@@ -1,6 +1,6 @@
 [window]
-w = 865
-h = 1029
+w = 1022
+h = 747
 toolbar = True
 statusbar = True
 thumbpane = True
@@ -14,7 +14,7 @@ open_all = True
 hidden = False
 use_last_dir = True
 last_dir = /media/sdb1
-fixed_dir = /home/janek
+fixed_dir = /home/michal
 open_mode = 1
 last_mode = 1
 listwrap_mode = 0

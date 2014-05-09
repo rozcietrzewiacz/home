@@ -1,10 +1,11 @@
 menbrow = {
 	{ "Opera"    , "opera"  , "/usr/share/icons/black-white_2-Style/scalable/apps/256/opera.png" },
-	{ "Chromium" , "/usr/bin/chromium --disable-plugins" , "/home/janek/.config/cairo-dock/misc-nice-icons/chromium.png" },
-	{ "Chromium+plug" , "/usr/bin/chromium" , "/home/janek/.config/cairo-dock/misc-nice-icons/chromium.png" },
+--	{ "Chromium" , "/usr/bin/chromium --disable-plugins" , "/home/michal/.config/cairo-dock/misc-nice-icons/chromium.png" },
+--	{ "Chromium+plug" , "/usr/bin/chromium" , "/home/michal/.config/cairo-dock/misc-nice-icons/chromium.png" },
 	{ "Midori"   , "midori" , "/usr/share/icons/hicolor/24x24/apps/midori.png" },
-	{ "Iron+plug" , "/home/janek/bin/iron/iron" , "/home/janek/bin/iron/product_logo_48.png" },
-	{ "luakit"    , "luakit" } 
+--	{ "Iron+plug" , "/home/michal/bin/iron/iron" , "/home/michal/bin/iron/product_logo_48.png" },
+        { "firefox"   , "firefox", "/usr/share/icons/hicolor/24x24/apps/firefox.png" },
+        { "luakit"    , "luakit" } 
 }
 
 menedit = {
@@ -20,7 +21,7 @@ mendev = {
 }
 
 menmisc = {
-	{ "Muz-aurel @t", terminal .. " -e /home/janek/.scripts/aurel_muza.sh" },
+	{ "Muz-aurel @t", terminal .. " -e /home/michal/.scripts/aurel_muza.sh" },
 	{ "VYM"  , "vym", "/usr/share/vym/icons/vym-16x16.png"}
 }
 
@@ -47,7 +48,7 @@ menoffice = {
 }
 
 menfile = {
-	{ "Thunar"    , "Thunar" },
+	{ "SpaceFM"    , "spacefm", "/usr/share/icons/hicolor/48x48/apps/spacefm.png" },
 	{ "mc @term"        , terminal .. " -e mc" }
 }
 

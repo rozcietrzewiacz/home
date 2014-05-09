@@ -46,9 +46,9 @@ listusbdisks ()
     DYSKI=""
     for dsk in ${@-/dev/sd?}
     do
-        /sbin/udevadm info --query=path --name="$dsk" | grep --colour=auto -q usb || continue
+        udevadm info --query=path --name="$dsk" | grep --colour=auto -q usb || continue
         echo -e "===== device \e[1m$dsk\e[0m is:"
-        ( eval $(/sbin/udevadm info --query=property --name="$dsk" | grep "\(MODEL\|VENDOR\)_ID")
+        ( eval $(udevadm info --query=property --name="$dsk" | grep "\(MODEL\|VENDOR\)_ID")
           [ "$ID_VENDOR_ID:$ID_MODEL_ID" == ":" ] && echo "Unknown" || \
 	    lsusb $VERBOSE -d "$ID_VENDOR_ID:$ID_MODEL_ID" 
           /bin/lsblk -no NAME,SIZE,FSTYPE,MOUNTPOINT $dsk | sed "s/ \(\/[^ ]*$\)/ "$'\e[41m'"\1"$'\e[0m'"/"
@@ -61,12 +61,12 @@ listusbdisks ()
         echo "Wybierz partycję do zamontowania:"
         select dysk in $montowalne "Anuluj montowanie"
         do
-            [[ "$dysk" == "Anuluj montowanie" ]] && break
+            [[ "$dysk" == "Anuluj montowanie" || "$dysk" == "" ]] && break
             pmount $dysk
             echo -n "$dysk mounted at "
             echo -n "/media/$dysk" | xclip -f 
             echo " (path coppied to clipboard)"
-            break
+            break            
         done
     fi
 }

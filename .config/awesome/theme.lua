@@ -23,7 +23,7 @@ theme.border_normal = "#111111"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
 
-basepth = "/home/janek/.config/awesome"
+basepth = "/home/michal/.config/awesome"
 -- There are another variables sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -62,7 +62,7 @@ theme.titlebar_close_button_normal = basepth .. "/zenburn-anrxc/titlebar/close_n
 theme.titlebar_close_button_focus = basepth .. "/zenburn-anrxc/titlebar/close_focus.png"
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { } --"/usr/bin/awsetbg /mnt/windows/Zdj_n_pics/Screen/bg/Skrzydlata_w_chmurach_1.jpg" }
+theme.wallpaper_cmd = { } --"/usr/bin/awsetbg /mnt/data/Zdj_n_pics/Screen/bg/Skrzydlata_w_chmurach_1.jpg" }
 --theme/background.png
 
 -- You can use your own layout icons like this:
@@ -78,6 +78,6 @@ theme.layout_tiletop = basepth .. "/theme/layouts/tiletop_b1.png"
 theme.layout_spiral = basepth .. "/theme/layouts/spiralw.png"
 theme.layout_dwindle = basepth .. "/theme/layouts/dwindlew.png"
 theme.awesome_icon = basepth .. "/theme/awesome_red2_16.png"
---theme.awesome_icon = "/mnt/windows/Zdj_n_pics/other/logo_Jankoo-red.png"
+--theme.awesome_icon = "/mnt/data/Zdj_n_pics/other/logo_Jankoo-red.png"
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

@@ -154,7 +154,9 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 mytextclock = awful.widget.textclock()
 
 
-
+mytextbox = wibox.widget.textbox()
+mytextbox:set_text(awesome.release)
+--mytextbox:set_font("-*-neep-medium-*-*-*-8-*-*-*-*-*-iso8859-2")
 
 -- require( os.getenv( "HOME" ) .. "/.config/awesome/rooty.lua")
 require("rooty")
@@ -313,7 +315,8 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
-    if s == 1 then right_layout:add(wibox.widget.systray()) end
+    if s == 1 then right_layout:add(wibox.widget.systray())
+    else right_layout:add(mytextbox) end
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -620,9 +623,9 @@ awful.rules.rules = {
                properties = { tag = tags[1][2] } },
     { rule = { class = "Firefox" },
                properties = { tag = tags[1][2] } },
-    { rule = { instance = "chrome" },
+    { rule = { class = "chromium-browser" },
                properties = { tag = tags[1][2] } },
-    { rule = { instance = "iron" },
+    { rule = { class = "luakit" },
                properties = { tag = tags[1][2] } },
     { rule = { instance = "midori" },
                properties = { tag = tags[1][2] } },

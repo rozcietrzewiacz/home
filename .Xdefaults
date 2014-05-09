@@ -12,10 +12,12 @@ xterm*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
 urxvt*scrollBar:        false
 !urxvt*borderLess:	true  ## broken(?)
 urxvt*internalBorder:	0
-urxvt*inheritPixmap:	true
+urxvt*transparent:	true
 urxvt*blurRadius:	6x6
-urxvt*tintColor:       	#36a6a6
-urxvt*fading:	        59
+!seems like "RENDER" is broken currently :( 
+!urxvt*tintColor:       	#f01030
+!? Not well at all: urxvt*shading:          30
+urxvt*fading:	        19
 urxvt*scrollTtyOutput:	False
 urxvt*scrollTtyKeypress:True
 urxvt*scrollWithBuffer:	True
@@ -26,18 +28,18 @@ urxvt*geometry:		85x27
 urxvt*background:	white
 urxvt*foreground:	black
 !urxvt*urlLauncher:	/usr/bin/chromium
-urxvt*urlLauncher:	/home/janek/scripts/browser.sh
+urxvt*urlLauncher:	/home/michal/scripts/browser.sh
 urxvt*perl-ext-common:  matcher
 urxvt*perl-ext:		confirm-paste
 urxvt.cutchars:         `()'*<>[]{|}"
 urxvt*matcher.button:   1
-!urxvt*perl-ext:		tabbed	### używać urxb zamiast tego
+!urxvt*perl-ext:		tabbed	### "urxb" to be used instead
 
 urxb*scrollBar:        false
 !urxb*borderLess:	true ### BROKEN
-urxb*inheritPixmap:	true
-urxb*tintColor:       	#909090
-urxb*fading:	        49
+urxb*transparent:	true
+!urxb*tintColor:       	#903030
+urxb*fading:	        19
 urxb*scrollTtyOutput:	False
 urxb*scrollTtyKeypress:True
 urxb*scrollWithBuffer:	True
@@ -48,45 +50,48 @@ urxb*jumpScroll:	true
 urxb*skipScroll:	true
 urxb*termName:		xterm
 !urxb*urlLauncher:	/usr/bin/chromium
-urxb*urlLauncher:	/home/janek/scripts/browser.sh
+urxb*urlLauncher:	/home/michal/scripts/browser.sh
 urxb*perl-ext-common:  matcher,confirm-paste
 urxb*perl-ext:		tabbed
 urxb*matcher.button:   1
 
-!to jakimś sposobem jest dla wszystkich URxvt...
+!these apply to all URxvt windows
+URxvt*backgroundPixmap:	/mnt/data/Zdj_n_pics/Screen/bg/proc/line1.png;style=tiled
 URxvt*tabbed.tab-bg:	8
 URxvt*tabbed.tabbar-fg:	7
 URxvt*perl-ext-common:  matcher,confirm-paste
-URxvt*secondaryScroll:  true
+URxvt*secondaryWheel:  true
+!!!!----------THEME-BEGIN
+! black
+URxvt*color0  : #2E3436
+URxvt*color8  : #555753
+! red
+URxvt*color1  : #a31604
+URxvt*color9  : #c60001
+! green
+URxvt*color2  : #447241
+URxvt*color10 : #27a343
+! yellow
+URxvt*color3  : #c1951a
+URxvt*color11 : #d5a30e
+! blue
+URxvt*color4  : #425387
+URxvt*color12 : #4a5a8d
+! magenta
+URxvt*color5  : #965d98
+URxvt*color13 : #893c8c
+! cyan
+URxvt*color6  : #06989A
+URxvt*color14 : #12bccb
+! white
+URxvt*color7  : #D3D7CF
+URxvt*color15 : #EEEEEC
+!!!!----------THEME-END
 
-!!! zenburn color scheme
-URxvt*color0:         #353535
-URxvt*color8:         #666666
-!red
-URxvt*color1:         #AE4747
-URxvt*color9:         #EE6363
-!green
-URxvt*color2:         #556B2F
-URxvt*color10:        #9ACD32
-!brown/yellow
-URxvt*color3:         #DAA520
-URxvt*color11:        #FFC125
-!blue
-URxvt*color4:         #6F99B4
-URxvt*color12:        #7C96B0
-!magenta
-URxvt*color5:         #8B7B8B
-URxvt*color13:        #D8BFD8
-!cyan
-URxvt*color6:         #A7A15E
-URxvt*color14:        #F0E68C
-!white
-URxvt*color7:         #DDDDDD
-URxvt*color15:        #FFFFFF
 
 URUK*scrollBar:        false
 URUK*borderLess:	true
-URUK*inheritPixmap:	true
+URUK*transparent:	true
 URUK*tintColor:       	#212191
 !89bb33
 URUK*fading:	        39
@@ -114,9 +119,10 @@ xclock*Mode:       analog
 !xclock*Foreground: #F0DFAF
 xclock*geometry:   220x240+0+18
 
-yeahconsole*term:	        uxterm	
+yeahconsole*term:	        urxvt
 yeahconsole*xOffset:		10
-yeahconsole*screenWidth:	1004
+#yeahconsole*xOffset:		1690
+yeahconsole*screenWidth:	904
 yeahconsole*secondaryScreen:	True
 yeahconsole*aniDelay:              11
 yeahconsole*stepSize:              5
@@ -124,12 +130,15 @@ yeahconsole*toggleKey:		Win+F12
 yeahconsole*keySmaller:		Win+PageDown
 yeahconsole*keyBigger:		Win+PageUp
 yeahconsole*keyFull:		Win+F11
-yeahconsole*consoleHeight:	30
-yeahconsole*font:		-*-terminal-*-*-*-*-10-*-*-*-*-*-*-*
+yeahconsole*consoleHeight:	35
+yeahconsole*transparent:       true
+yeahconsole*tintColor:       	red
+yeahconsole*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
+!yeahconsole*font:		-*-terminal-*-*-*-*-10-*-*-*-*-*-*-*
 yeahconsole*perl-ext:		tabbed
 yeahconsole*scrollTtyOutput:	False
 yeahconsole*scrollTtyKeypress:	True
-yeahconsole*inheritPixmap:	true
+yeahconsole*transparent:	true
 yeahconsole*scrollBar:		false
 
 XTerm*saveLines: 0
@@ -172,3 +181,4 @@ xterm*color14:        #F0E68C
 !white
 xterm*color7:         #DDDDDD
 xterm*color15:        #FFFFFF
+
