@@ -147,6 +147,45 @@ EOM
         rm ~/.dotcloud/dotcloud* && cp -vf ~/.dotcloud/ACC/$1/dotcloud* ~/.dotcloud/
     fi
 }
+
+function pumount_ask()
+{
+    local DEVS_list=`pmount | grep "/dev/" | awk '{ print $1; }' 2>/dev/null`
+    local WYBRANE=""
+
+    if [ "x$DEVS_list" != "x" ]; then
+        
+        # found some mounted disks - let the user choose
+        select dysk in $DEVS_list "Odmontuj wszystkie" "Anuluj odmontowanie"
+        do
+            if [ "$dysk" == "Anuluj odmontowanie" ]; then
+                WYBRANE=""
+                break
+        
+            elif [ "$dysk" == "Odmontuj wszystkie" ]; then
+                WYBRANE=$DEVS_list
+                break
+            
+            else
+
+                WYBRANE=$dysk
+                break
+            fi
+            
+        done # select
+
+
+        for dysk_z_listy in $WYBRANE; do
+            pumount $dysk_z_listy && \
+                    echo " $dysk_z_listy odmontowany."
+        done # for
+    else
+        ## Empty list - do nothing.
+        echo "No mounted disks found!"
+    fi
+}
+
+
 ##########################
 ### Short, handy ones: ###
 
