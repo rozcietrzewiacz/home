@@ -1,5 +1,5 @@
 menbrow = {
-	{ "Opera"    , "opera"  , "/usr/share/icons/black-white_2-Style/scalable/apps/256/opera.png" },
+	{ "Opera-Beta"    , "opera-beta"  , "/usr/share/icons/hicolor/128x128/apps/opera-beta.png" },
 --	{ "Chromium" , "/usr/bin/chromium --disable-plugins" , "/home/michal/.config/cairo-dock/misc-nice-icons/chromium.png" },
 --	{ "Chromium+plug" , "/usr/bin/chromium" , "/home/michal/.config/cairo-dock/misc-nice-icons/chromium.png" },
 	{ "Midori"   , "midori" , "/usr/share/icons/hicolor/24x24/apps/midori.png" },

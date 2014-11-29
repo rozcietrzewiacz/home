@@ -52,6 +52,7 @@ urxb*termName:		xterm
 !urxb*urlLauncher:	/usr/bin/chromium
 urxb*urlLauncher:	/home/michal/scripts/browser.sh
 urxb*perl-ext-common:  matcher,confirm-paste
+urxb.cutchars:         `()'*<>[]{|}"
 urxb*perl-ext:		tabbed
 urxb*matcher.button:   1
 
