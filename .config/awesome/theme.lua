@@ -5,18 +5,20 @@
 theme = {}
 --font          = Neep Alt 10
 --font          = sans 8
-theme.font          = "fixed 10"
+--theme.font          = "fixed 12"
+theme.font          = "Newspaper 13"
+--theme.font          = "-*-new century schoolbook-bold-*-*-*-12-*-*-*-*-*-*-*"
 theme.taglist_font  = "fixed 14"
 
-theme.bg_normal     = "#22222288"
-theme.bg_focus      = "#4c0c0c94"
-theme.bg_urgent     = "#6f0f0f"
-theme.bg_minimize   = "#444444"
+theme.bg_normal     = "#222222C8"
+theme.bg_focus      = "#4c0c0cC4"
+theme.bg_urgent     = "#6f0f0fFF"
+theme.bg_minimize   = "#44444488"
 
 theme.fg_normal     = "#aaaaaa"
 theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
-theme.fg_minimize  =  "#ffffff"
+theme.fg_minimize  =  "#747464"
 
 theme.border_width  = 1
 theme.border_normal = "#111111"
@@ -46,8 +48,8 @@ theme.tasklist_floating_icon = basepth .. "/theme/tasklist/floating.png"
 theme.menu_border_width = "1"
 theme.menu_border_color = "#4a1a1a"
 theme.menu_submenu_icon = basepth .. "/theme/submenu.png"
-theme.menu_height   = "21"
-theme.menu_width    = "127"
+theme.menu_height   = "24"
+theme.menu_width    = "140"
 
 -- You can add as many variables as
 -- you wish and access them by using

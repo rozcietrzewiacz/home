@@ -130,15 +130,15 @@ myawesomemenu = {
 
 dofile( os.getenv( "HOME" ) .. "/.config/awesome/menu.lua" )
 mymainmenu = awful.menu({ items = { 
-		  { " :browsers:" , menbrow },
-		  { " :editors:"  , menedit },
-		  { " :fileUtil:" , menfile },
-		  { " :dev: "     , mendev },
-		  { " :media:"    , menmedia },
-		  { " :misc:"     , menmisc },
-		  { " :im/irc:"   , menirc },
-		  { " :office:"   , menoffice },
-		  { " :awesome:"  , myawesomemenu, beautiful.awesome_icon }
+		  { ":browsers:" , menbrow },
+		  { ":editors:"  , menedit },
+		  { ":fileUtil:" , menfile },
+		  { ":dev: "     , mendev },
+		  { ":media:"    , menmedia },
+		  { ":misc:"     , menmisc },
+		  { ":im/irc:"   , menirc },
+		  { ":office:"   , menoffice },
+		  { ":awesome:"  , myawesomemenu, beautiful.awesome_icon }
 		}
 	       })
 
@@ -408,7 +408,7 @@ globalkeys = awful.util.table.join(
                 client.focus:raise()
             end 
 	    cg = client.focus:geometry()
-	    mouse.coords({ x=cg['x']+2, y=cg['y']+cg['height']/2 })
+	    mouse.coords({ x=cg['x']+5, y=cg['y']+cg['height']/2 })
         end),
 
     -- Standard program
@@ -647,20 +647,6 @@ awful.rules.rules = {
                properties = { tag = tags[1][4] } },
 }
 -- }}}
--- Table of clients that should be set floating. The index may be either
--- the application class or instance. The instance is useful when running
--- a console app in a terminal like (Music on Console)
---    xterm -name mocp -e mocp
---floatapps =
---{
-    -- by class
---    ["MPlayer"] = true,
---    ["pinentry"] = true,
---    ["gimp"] = true,
-    -- by instance
---    ["mocp"] = true,
---    ["ida"] = true
---}
 
 
 -- {{{ Signals

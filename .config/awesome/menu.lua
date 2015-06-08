@@ -1,18 +1,18 @@
 menbrow = {
-	{ "Opera-Beta"    , "opera-beta"  , "/usr/share/icons/hicolor/128x128/apps/opera-beta.png" },
---	{ "Chromium" , "/usr/bin/chromium --disable-plugins" , "/home/michal/.config/cairo-dock/misc-nice-icons/chromium.png" },
---	{ "Chromium+plug" , "/usr/bin/chromium" , "/home/michal/.config/cairo-dock/misc-nice-icons/chromium.png" },
-	{ "Midori"   , "midori" , "/usr/share/icons/hicolor/24x24/apps/midori.png" },
---	{ "Iron+plug" , "/home/michal/bin/iron/iron" , "/home/michal/bin/iron/product_logo_48.png" },
         { "firefox"   , "firefox", "/usr/share/icons/hicolor/24x24/apps/firefox.png" },
-        { "luakit"    , "luakit" } 
+--	{ "Chromium+plug" , "/usr/bin/chromium" , "/home/michal/.config/cairo-dock/misc-nice-icons/chromium.png" },
+--	{ "Midori"   , "midori" , "/usr/share/icons/hicolor/24x24/apps/midori.png" },
+--	{ "Iron+plug" , "/home/michal/bin/iron/iron" , "/home/michal/bin/iron/product_logo_48.png" },
+        { "luakit"    , "luakit" }, 
+--	{ "Opera-Beta"    , "opera-beta"  , "/usr/share/icons/hicolor/128x128/apps/opera-beta.png" },
+--	{ "Chromium" , "/usr/bin/chromium --disable-plugins" , "/home/michal/.config/cairo-dock/misc-nice-icons/chromium.png" },
 }
 
 menedit = {
 	{ "gvim"     , "gvim", "/usr/share/pixmaps/gvim.xpm" },
 	{ "leafpad" , "leafpad", "/usr/share/icons/hicolor/24x24/apps/leafpad.png" },
 	{ "vim @term"      , terminal .. " -e vim" },
-	{ "kate"     , "/usr/bin/kate" }
+--	{ "kate"     , "/usr/bin/kate" }
 }
 
 mendev = {
@@ -40,10 +40,10 @@ menmedia = {
 }
 
 menoffice = {
+	{ "Evince"     , "evince"    },
 	{ "LO Writer"  , "lowriter"  },
 	{ "LO Calc"    , "localc"    },
 	{ "LO Impress" , "loimpress" },
-	{ "Evince"     , "evince"    },
 	{ "Dia"        , "dia"       }
 }
 
