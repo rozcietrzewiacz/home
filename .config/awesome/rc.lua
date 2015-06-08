@@ -4,6 +4,8 @@ local gears = require("gears")
 local awful = require("awful")
 awful.rules = require("awful.rules")
 require("awful.autofocus")
+-- needed for awesome-client to work
+require("awful.remote")
 -- Widget and layout library
 local wibox = require("wibox")
 -- Theme handling library
@@ -48,6 +50,8 @@ terminal = "urxvt"
 terminalb = "urxvt -name urxb"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
+terminal_run = terminal .. " -e "
+
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -144,6 +148,18 @@ mymainmenu = awful.menu({ items = {
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
+
+scrSTART    = "urxvt -name urxCmd -e sh -c \"su -c \\\"/etc/init.d/"
+scrEND      = " start\\\"; echo Wcisnij ENTER by zamknac okno; read\""
+myThinkVantageMenuItems = {
+    { "tor",    scrSTART .. "tor"       .. scrEND },
+    { "cupsd",  scrSTART .. "cupsd"     .. scrEND },
+    { "sshd",   scrSTART .. "sshd"      .. scrEND }
+}
+-- TODO: wypełniać pętlą for
+myThinkVantageMenu = awful.menu({ items = myThinkVantageMenuItems })
+
+
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -305,7 +321,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = "bottom", screen = s })
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
@@ -636,8 +652,10 @@ awful.rules.rules = {
                    c.screen = mouse.screen
                    c:tags({ tags[c.screen][3] })
                end},
+    { rule = { instance = "urxCmd" },
+            properties =  { floating = true } },
     { rule = { class = "gimp" },
-      properties = { floating = true } },
+            properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },

@@ -36,6 +36,20 @@ urxvt.cutchars:         `()'*<>[]{|}"
 urxvt*matcher.button:   1
 !urxvt*perl-ext:		tabbed	### "urxb" to be used instead
 
+urxCmd*scrollBar:        false
+urxCmd*internalBorder:   0
+urxCmd*transparent:      true
+urxCmd*blurRadius:       6
+urxCmd*tintColor:        #442222
+urxCmd*fading:           29
+urxCmd*visualBell:       true
+urxCmd*font:             -*-neep-medium-*-*-*-20-*-*-*-*-*-iso8859-2
+urxCmd*reverseVideo:     true
+urxCmd*geometry:         75x16
+urxCmd*background:       white
+urxCmd*foreground:       black
+
+
 urxb*scrollBar:        false
 !urxb*borderLess:	true ### BROKEN
 urxb*transparent:	true
