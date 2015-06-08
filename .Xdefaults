@@ -13,11 +13,12 @@ urxvt*scrollBar:        false
 !urxvt*borderLess:	true  ## broken(?)
 urxvt*internalBorder:	0
 urxvt*transparent:	true
-urxvt*blurRadius:	6x6
+urxvt*blurRadius:	6
 !seems like "RENDER" is broken currently :( 
-!urxvt*tintColor:       	#f01030
+urxvt*tintColor:       	#112244
+!#f01030
 !? Not well at all: urxvt*shading:          30
-urxvt*fading:	        19
+urxvt*fading:	        29
 urxvt*scrollTtyOutput:	False
 urxvt*scrollTtyKeypress:True
 urxvt*scrollWithBuffer:	True
@@ -106,11 +107,11 @@ URUK*jumpScroll:	true
 URUK*skipScroll:	true
 URUK*termName:		linux
 
-*Background: #2A2121
-*Foreground: #F0DFAF
-*BorderColor:     #340E0E
+*Background:    #2A2121
+*Foreground:    #F0DFAF
+*BorderColor:   #340E0E
 !*cursorColor:     #340E0E
-*Cursor:     arrow
+*Cursor:        arrow
 
 xclock*update:     1
 xclock*Mode:       analog
@@ -135,11 +136,9 @@ yeahconsole*consoleHeight:	35
 yeahconsole*transparent:       true
 yeahconsole*tintColor:       	red
 yeahconsole*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
-!yeahconsole*font:		-*-terminal-*-*-*-*-10-*-*-*-*-*-*-*
 yeahconsole*perl-ext:		tabbed
 yeahconsole*scrollTtyOutput:	False
 yeahconsole*scrollTtyKeypress:	True
-yeahconsole*transparent:	true
 yeahconsole*scrollBar:		false
 
 XTerm*saveLines: 0
@@ -183,3 +182,19 @@ xterm*color14:        #F0E68C
 xterm*color7:         #DDDDDD
 xterm*color15:        #FFFFFF
 
+
+!------------------------------------
+!---- xcalendar ---------------------
+XCalendar*daynames:     niedziela/poniedzialek/wtorek/sroda/czwartek/piatek/sobota
+XCalendar*monthnames:   styczen/luty/marzec/kwiecien/maj/czerwiec/lipiec/sierpien/wrzesien/pazdziernik/listopad/grudzien
+XCalendar*Font:         -*-lucidatypewriter-*-*-normal-*-16-*-*-*-*-*-iso8859-2
+XCalendar*firstDay:     1
+XCalendar*daynames.SUN*Foreground: Red
+XCalendar*daynames.SAT*Foreground: White
+XCalendar*daynumbers*Foreground:   White
+XCalendar*daynumbers.7*Foreground: Red
+XCalendar*daynumbers.14*Foreground: Red
+XCalendar*daynumbers.21*Foreground: Red
+XCalendar*daynumbers.28*Foreground: Red
+XCalendar*daynumbers.35*Foreground: Red
+XCalendar*daynames*Background: #340E0E
