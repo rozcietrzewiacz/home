@@ -197,6 +197,25 @@ xterm*color7:         #DDDDDD
 xterm*color15:        #FFFFFF
 
 
+! odwrócone kolory dla pracy w jasnym otoczeniu
+urxvr*scrollBar:        false
+urxvr*internalBorder:	0
+urxvr*transparent:	false
+urxvr*fading:	        9
+urxvr*tintColor:       	#FFFFFF
+urxvr*scrollTtyOutput:	False
+urxvr*scrollTtyKeypress:True
+urxvr*scrollWithBuffer:	True
+urxvr*visualBell:	false
+urxvr*font:		-*-neep-medium-*-*-*-18-*-*-*-*-*-iso8859-2
+urxvr*background:	#FFFFFF
+urxvr*foreground:	#000000
+urxvr*urlLauncher:	/home/michal/scripts/browser.sh
+urxvr*perl-ext-common:  matcher
+urxvr*perl-ext:		confirm-paste
+urxvr.cutchars:         `()'*<>[]{|}"
+urxvr*matcher.button:   1
+
 !------------------------------------
 !---- xcalendar ---------------------
 XCalendar*daynames:     niedziela/poniedzialek/wtorek/sroda/czwartek/piatek/sobota
