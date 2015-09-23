@@ -41,14 +41,16 @@ menmedia = {
 
 menoffice = {
 	{ "Evince"     , "evince"    },
+	{ "Xsane"      , "xsane"     },
 	{ "LO Writer"  , "lowriter"  },
 	{ "LO Calc"    , "localc"    },
-	{ "LO Impress" , "loimpress" },
+--	{ "LO Impress" , "loimpress" },
 	{ "Dia"        , "dia"       }
 }
 
 menfile = {
 	{ "SpaceFM"    , "spacefm", "/usr/share/icons/hicolor/48x48/apps/spacefm.png" },
+        { "Thunar"     , "Thunar" , "/usr/share/icons/hicolor/48x48/apps/Thunar.png" },
 	{ "mc @term"        , terminal .. " -e mc" }
 }
 
