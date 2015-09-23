@@ -149,15 +149,32 @@ mymainmenu = awful.menu({ items = {
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
-scrSTART    = "urxvt -name urxCmd -e sh -c \"su -c \\\"/etc/init.d/"
-scrEND      = " start\\\"; echo Wcisnij ENTER by zamknac okno; read\""
-myThinkVantageMenuItems = {
-    { "tor",    scrSTART .. "tor"       .. scrEND },
-    { "cupsd",  scrSTART .. "cupsd"     .. scrEND },
-    { "sshd",   scrSTART .. "sshd"      .. scrEND }
-}
--- TODO: wypełniać pętlą for
-myThinkVantageMenu = awful.menu({ items = myThinkVantageMenuItems })
+ThinkVantageMenuItems = {}
+function add_TVantageMenuItem( TVitem )
+    local termSTART      = "urxvt -name urxCmd -e sh -c \""
+    local scriptSTART    = "su -c \\\"/etc/init.d/"
+    local scriptEND      = " start\\\"; "
+    local termEND        = "echo Wcisnij ENTER by zamknac okno; read\""
+
+    --[[ TODO
+    -- dorobić util.escape do przetwarzania parametrów "fg" i "bg"
+    --]]
+    table.insert( ThinkVantageMenuItems ,
+        { TVitem[1] ,
+            termSTART 
+            .. scriptSTART .. TVitem[1] .. scriptEND 
+            .. ( TVitem.bg and " nohup sh -c \\\"" .. TVitem.bg .. "\\\" &>/dev/null & " or "" )
+            .. ( TVitem.fg or "" )
+            .. termEND 
+        })
+end
+                                     
+add_TVantageMenuItem( { "wicd" , bg = "pgrep wicd && ( pgrep wicd-client || wicd-client )" } )
+add_TVantageMenuItem( { "tor"   } )
+add_TVantageMenuItem( { "cupsd" } )
+add_TVantageMenuItem( { "sshd"  } )
+
+myThinkVantageMenu = awful.menu({ items = ThinkVantageMenuItems })
 
 
 
@@ -632,6 +649,8 @@ awful.rules.rules = {
 --            end
                  },
     { rule = { class = "MPlayer" },
+               properties = { floating = true } },
+    { rule = { class = "Wicd-client.py" },
                properties = { floating = true } },
 --    { rule = { instance = "kate" },
 --      properties = { tag = tags[1][1] } },
