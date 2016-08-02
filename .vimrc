@@ -98,15 +98,15 @@ endif
 "----------------------------------------------------
 if v:progname =~? "gvim"
 	colorscheme evening
-else
-	set tabline=%!MyTabLine()
+"else
+"	set tabline=%!MyTabLine()
 endif
 
 
-set showtabline=1 " 2=always
-autocmd GUIEnter * hi! TabLineFill term=underline cterm=underline gui=underline
-autocmd GUIEnter * hi! TabLineSel term=bold,reverse,underline
-\ ctermfg=11 ctermbg=12 guifg=#ffff00 guibg=#0000ff gui=underline
+"set showtabline=1 " 2=always
+"autocmd GUIEnter * hi! TabLineFill term=underline cterm=underline gui=underline
+"autocmd GUIEnter * hi! TabLineSel term=bold,reverse,underline
+"\ ctermfg=11 ctermbg=12 guifg=#ffff00 guibg=#0000ff gui=underline
 
 let g:Tex_SmartQuoteOpen = "\"`"
 let g:Tex_SmartQuoteClose = "\"'"
@@ -140,3 +140,5 @@ if match($TERM, "screen")!=-1
   set term=xterm
 endif
 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1

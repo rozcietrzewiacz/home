@@ -54,7 +54,8 @@ urxvt*scrollTtyOutput:	False
 urxvt*scrollTtyKeypress:True
 urxvt*scrollWithBuffer:	True
 urxvt*visualBell:	false
-urxvt*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
+!urxvt*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
+urxvt*font:		xft:Ubuntu Mono derivative Powerline:size=13
 urxvt*reverseVideo:	true
 urxvt*geometry:		85x27
 urxvt*background:	white
@@ -92,7 +93,8 @@ urxb*scrollTtyOutput:	False
 urxb*scrollTtyKeypress: True
 urxb*scrollWithBuffer:	True
 urxb*visualBell:	false
-urxb*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
+!urxb*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
+urxb*font:		xft:Ubuntu Mono derivative Powerline:size=13
 urxb*reverseVideo:	true
 urxb*jumpScroll:	true
 urxb*skipScroll:	true
@@ -235,3 +237,13 @@ XCalendar*daynumbers.21*Foreground: Red
 XCalendar*daynumbers.28*Foreground: Red
 XCalendar*daynumbers.35*Foreground: Red
 XCalendar*daynames*Background: #340E0E
+
+!! rendering settings for Xft fonts  (GLOBAL)
+! -- source: https://wiki.gentoo.org/wiki/Rxvt-unicode 
+!-*-{ Xft settings
+Xft*dpi:       96
+Xft*antialias: True
+Xft*hinting:   Full
+Xft.rgba:       rgb
+!
+!-*-}
