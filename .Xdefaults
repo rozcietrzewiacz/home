@@ -6,8 +6,38 @@ Xft.rgba:       rgb
 !Xft.hinting:    true
 !Xft.hintstyle:  hintslight
 
-xterm*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
-!xterm*reverseVideo:	true
+!these apply to all URxvt windows
+URxvt*tabbed.tab-bg:	8
+URxvt*tabbed.tabbar-fg:	7
+URxvt*perl-ext-common:  matcher,confirm-paste
+URxvt*secondaryWheel:  true
+URxvt*termName:		xterm-256color
+!!!!----------THEME-BEGIN
+! black
+URxvt*color0  : #2E3436
+URxvt*color8  : #555753
+! red
+URxvt*color1  : #a31604
+URxvt*color9  : #c60001
+! green
+URxvt*color2  : #447241
+URxvt*color10 : #27a343
+! yellow
+URxvt*color3  : #c1951a
+URxvt*color11 : #d5a30e
+! blue
+URxvt*color4  : #425387
+URxvt*color12 : #4a5a8d
+! magenta
+URxvt*color5  : #965d98
+URxvt*color13 : #893c8c
+! cyan
+URxvt*color6  : #06989A
+URxvt*color14 : #12bccb
+! white
+URxvt*color7  : #D3D7CF
+URxvt*color15 : #EEEEEC
+!!!!----------THEME-END
 
 urxvt*scrollBar:        false
 !urxvt*borderLess:	true  ## broken(?)
@@ -18,7 +48,8 @@ urxvt*blurRadius:	6
 urxvt*tintColor:       	#112244
 !#f01030
 !? Not well at all: urxvt*shading:          30
-urxvt*fading:	        29
+!urxvt*fading:	        29
+urxvt*fading:	        19
 urxvt*scrollTtyOutput:	False
 urxvt*scrollTtyKeypress:True
 urxvt*scrollWithBuffer:	True
@@ -50,61 +81,32 @@ urxCmd*background:       white
 urxCmd*foreground:       black
 
 
+!!  name="urxb" -- Tabbed !!
+!--------------------------!
 urxb*scrollBar:        false
 !urxb*borderLess:	true ### BROKEN
 urxb*transparent:	true
-!urxb*tintColor:       	#903030
+urxb*tintColor:       	#401010
 urxb*fading:	        19
 urxb*scrollTtyOutput:	False
-urxb*scrollTtyKeypress:True
+urxb*scrollTtyKeypress: True
 urxb*scrollWithBuffer:	True
 urxb*visualBell:	false
 urxb*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
 urxb*reverseVideo:	true
 urxb*jumpScroll:	true
 urxb*skipScroll:	true
-urxb*termName:		xterm
 !urxb*urlLauncher:	/usr/bin/chromium
 urxb*urlLauncher:	/home/michal/scripts/browser.sh
 urxb*perl-ext-common:  matcher,confirm-paste
 urxb.cutchars:         `()'*<>[]{|}"
 urxb*perl-ext:		tabbed
 urxb*matcher.button:   1
-
-!these apply to all URxvt windows
-URxvt*backgroundPixmap:	/mnt/data/Zdj_n_pics/Screen/bg/proc/line1.png;style=tiled
-URxvt*tabbed.tab-bg:	8
-URxvt*tabbed.tabbar-fg:	7
-URxvt*perl-ext-common:  matcher,confirm-paste
-URxvt*secondaryWheel:  true
-!!!!----------THEME-BEGIN
-! black
-URxvt*color0  : #2E3436
-URxvt*color8  : #555753
-! red
-URxvt*color1  : #a31604
-URxvt*color9  : #c60001
-! green
-URxvt*color2  : #447241
-URxvt*color10 : #27a343
-! yellow
-URxvt*color3  : #c1951a
-URxvt*color11 : #d5a30e
-! blue
-URxvt*color4  : #425387
-URxvt*color12 : #4a5a8d
-! magenta
-URxvt*color5  : #965d98
-URxvt*color13 : #893c8c
-! cyan
-URxvt*color6  : #06989A
-URxvt*color14 : #12bccb
-! white
-URxvt*color7  : #D3D7CF
-URxvt*color15 : #EEEEEC
-!!!!----------THEME-END
+urxb*termName:		xterm-256color
 
 
+!!  name="URUK" -- (misc) !!
+!--------------------------!
 URUK*scrollBar:        false
 URUK*borderLess:	true
 URUK*transparent:	true
@@ -135,9 +137,11 @@ xclock*Mode:       analog
 !xclock*Foreground: #F0DFAF
 xclock*geometry:   220x240+0+18
 
+!!  yeahconsole (tabbed)  !!
+!--------------------------!
 yeahconsole*term:	        urxvt
 yeahconsole*xOffset:		10
-#yeahconsole*xOffset:		1690
+!yeahconsole*xOffset:		1690
 yeahconsole*screenWidth:	904
 yeahconsole*secondaryScreen:	True
 yeahconsole*aniDelay:              11
@@ -171,7 +175,7 @@ XTerm*vt100.translations: #override \n\
   Shift <KeyPress> Next: string(0x1b) string("[25T") \n
 
 
-!!! zenburn color scheme
+!!! zenburn color scheme for xterm
 xterm*color0:         #353535
 xterm*color8:         #666666
 !red
