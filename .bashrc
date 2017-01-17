@@ -7,7 +7,7 @@ if [[ $- != *i* ]] ; then
 fi
 
 
-HISTIGNORE="*xpdf*upw*:*xpdf*opw*:*goenc*:*xamisc*:*cd *echo -e *:*cd *printf"
+HISTIGNORE="*cd *echo -e *:*cd *printf"
 HISTSIZE=1400
 HISTCONTROL=ignoreboth:erasedups
 ## 'ignoreboth' = ignore duplicate lines or lines starting with space!
@@ -20,6 +20,7 @@ BROWSER="$HOME/scripts/browser.sh"
 export BROWSER
 export HISTIGNORE
 export HISTSIZE
+export HISTFILE
 export PATH
 export LANG
 export LC_MESSAGES
@@ -41,11 +42,6 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # functions - also separate
 [[ -r ~/.bashrc-functions ]] && source ~/.bashrc-functions
 
-# Midnight Commander chdir enhancement
-if [ -f /usr/share/mc/mc.gentoo ]; then
-      . /usr/share/mc/mc.gentoo
-fi
-
 ### found somewhere
 ulimit -S -c 0        # Don't want any coredumps
 
@@ -66,14 +62,6 @@ alias ll="ls -lhF"
 alias la="ls -lahF"
 alias hrr='history -c; history -r'
 
-zgrep -m1 "CONFIG_SCHED_AUTOGROUP=y" /proc/config.gz || \
-if [[ "$PS1" ]] ; then
-          mkdir -m 0700 /sys/fs/cgroup/cpu/$$ && \
-          echo 1 >> /sys/fs/cgroup/cpu/$$/notify_on_release && \
-          echo $$ >> /sys/fs/cgroup/cpu/$$/tasks 
-	 # echo /usr/local/sbin/rmcgroup >> /sys/fs/cgroup/cpu/release_agent && \
-fi
-
 Bn=$HOME/fortune
 
 [ -d $Bn ] && fortune -c 20% $Bn/bash_tip 5% $Bn/vit 15% $Bn/vim_tip 20% $Bn/sed_tip 40% $Bn/system |\
@@ -93,3 +81,5 @@ for f in ~/.node-completion/* ; do
   test -f "$f" && . "$f"
 done
 # }}}
+
+
