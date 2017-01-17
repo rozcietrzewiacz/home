@@ -40,7 +40,7 @@ function mv_p ()
 }
 
 ############# moja autorska funkcja listująca dyski usb
-listusbdisks () 
+pmount_ask () 
 {
     [[ "x$1" == "x-v" ]] && shift && local VERBOSE=-v
     DYSKI=""
@@ -71,6 +71,8 @@ listusbdisks ()
     fi
 }
 
+## dawniej ta funkcja sie nazywala tak:
+alias listusbdisks="pmount_ask"
 
 ##############
 function spawn() {
