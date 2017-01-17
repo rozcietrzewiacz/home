@@ -162,7 +162,9 @@ function add_TVantageMenuItem( TVitem )
     local termSTART      = "urxvt -name urxCmd -e sh -c \""
     local scriptSTART    = "su -c \\\"/etc/init.d/"
     local scriptEND      = " start\\\"; "
-    local termEND        = "echo Wcisnij ENTER by zamknac okno; read\""
+    local termEND        = "[ $? -eq 0 ] &&" 
+                        .. " (echo Zamkniecie okna za 1 sek; sleep 1) ||"
+                        .. " (echo Wcisnij ENTER by zamknac okno; read) \""
 
     --[[ TODO
     -- dorobić util.escape do przetwarzania parametrów "fg" i "bg"
@@ -178,9 +180,10 @@ function add_TVantageMenuItem( TVitem )
 end
                                      
 add_TVantageMenuItem( { "wicd" , bg = "pgrep wicd && ( pgrep wicd-client || wicd-client )" } )
-add_TVantageMenuItem( { "tor"   } )
-add_TVantageMenuItem( { "cupsd" } )
-add_TVantageMenuItem( { "sshd"  } )
+add_TVantageMenuItem( { "net.eth0"   } )
+add_TVantageMenuItem( { "tor"        } )
+add_TVantageMenuItem( { "cupsd"      } )
+add_TVantageMenuItem( { "sshd"       } )
 
 myThinkVantageMenu = awful.menu({ items = ThinkVantageMenuItems })
 
