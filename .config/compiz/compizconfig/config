@@ -1,6 +1,0 @@
-[general]
-profile = to_jest_norma2
-integration = true
-plugin_list_autosort = true
-backend = ini
-
