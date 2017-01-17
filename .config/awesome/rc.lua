@@ -99,17 +99,25 @@ apptitles =
 -- {{{ Tags
 -- Define tags table.
 gold_ratio = 0.6180339
+function gen_tagnames( change_font )
+    return { "⋰➊⋱",  --"⋰➊✍⋱", --1
+	     "⋰➋" .. ( change_font and "<span font_desc='Fixed 8'>" or "" ) 
+                .. ".web" .. ( change_font and "</span>" or "" ) .. "⋱", --2
+	     "⋰➌" .. ( change_font and "<span color='#7f5f2f' font_desc='Fixed 9'>" or "" )
+                .. "⠠⠵" .. ( change_font and "</span>" or "" ) .. "⋱", --3
+	     "⋰➍" .. ( change_font and "<span font_desc='Fixed 8'>" or "" )
+                .. ".dev" .. ( change_font and "</span>" or "" ) .. "⋱", --4
+             "⋰➎⋱", --5 
+	     "⋰➏⋱" } --6
+end
+
 -- !!! ZMIANA FONTU MOŻLIWA TYLKO PO EDYCJI
 -- PLIKU 	/usr/share/awesome/lib/awful/widget/taglist.lua (dla wersji 3.3.1)
 -- LUB		/usr/share/awesome/lib/awful/widget.lua 	(dla wersji 3.2.1-r3)
 -- !!!
 --tags_name   = { "➊", "➋⋮@", "➌⋮⠠⠵",
-tags_name   = { "⋰➊⋱",  --"⋰➊✍⋱", --1
-		    "⋰➋<span font_desc='Fixed 8'>.web</span>⋱", --2
-		        "⋰➌<span color='#7f5f2f' font_desc='Fixed 9'>⠠⠵</span>⋱", --3
-			    "⋰➍<span font_desc='Fixed 8'>.dev</span>⋱", --4
-			        "⋰➎⋱", --5 
-				    "⋰➏⋱" } --6
+
+tags_name = gen_tagnames( false )
 tags_layout = {  1 , 1 , 2 , 1 , 1 , 1 }
 -- Define tags table.
 tags = {}
