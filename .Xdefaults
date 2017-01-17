@@ -7,6 +7,7 @@ Xft.rgba:       rgb
 !Xft.hintstyle:  hintslight
 
 !these apply to all URxvt windows
+URxvt*backgroundPixmap:	/mnt/data/Zdj_n_pics/Screen/bg/proc/line1.png;style=tiled
 URxvt*tabbed.tab-bg:	8
 URxvt*tabbed.tabbar-fg:	7
 URxvt*perl-ext-common:  matcher,confirm-paste
@@ -95,6 +96,7 @@ urxb*scrollWithBuffer:	True
 urxb*visualBell:	false
 !urxb*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
 urxb*font:		xft:Ubuntu Mono derivative Powerline:size=13
+!urxb*font:		xft:Ubuntu Mono:size=13
 urxb*reverseVideo:	true
 urxb*jumpScroll:	true
 urxb*skipScroll:	true
@@ -125,19 +127,6 @@ URUK*jumpScroll:	true
 URUK*skipScroll:	true
 URUK*termName:		linux
 
-*Background:    #2A2121
-*Foreground:    #F0DFAF
-*BorderColor:   #340E0E
-!*cursorColor:     #340E0E
-*Cursor:        arrow
-
-xclock*update:     1
-xclock*Mode:       analog
-!xclock*Background: #222222
-!#3F3F3F
-!xclock*Border:     #3F3F3F
-!xclock*Foreground: #F0DFAF
-xclock*geometry:   220x240+0+18
 
 !!  yeahconsole (tabbed)  !!
 !--------------------------!
@@ -160,6 +149,38 @@ yeahconsole*perl-ext:		tabbed
 yeahconsole*scrollTtyOutput:	False
 yeahconsole*scrollTtyKeypress:	True
 yeahconsole*scrollBar:		false
+
+!!  name="urxr" -- reversed colors for intensly illuminated environment  !!
+!-------------------------------------------------------------------------!
+urxr*backgroundPixmap:	
+urxr*scrollBar:        false
+!urxr*borderLess:	true ### BROKEN
+!urxr*transparent:	true
+!urxr*tintColor:       	#903030
+urxr*fading:	        19
+urxr*scrollTtyOutput:	False
+urxr*scrollTtyKeypress: True
+urxr*scrollWithBuffer:	True
+urxr*visualBell:	false
+urxr*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
+urxr*reverseVideo:	true
+urxr*background:	black
+urxr*foreground:	white
+urxr*jumpScroll:	true
+urxr*skipScroll:	true
+!urxr*urlLauncher:	/usr/bin/chromium
+urxr*urlLauncher:	/home/michal/scripts/browser.sh
+urxr*perl-ext-common:  matcher,confirm-paste
+urxr.cutchars:         `()'*<>[]{|}"
+urxr*perl-ext:		tabbed
+urxr*matcher.button:   1
+urxr*termName:		xterm-256color
+
+
+!!   other settings   !!
+!----------------------!
+xterm*font:		-*-neep-medium-*-*-*-15-*-*-*-*-*-iso8859-2
+!xterm*reverseVideo:	true
 
 XTerm*saveLines: 0
 XTerm*vt100.translations: #override \n\
@@ -203,24 +224,19 @@ xterm*color7:         #DDDDDD
 xterm*color15:        #FFFFFF
 
 
-! odwrócone kolory dla pracy w jasnym otoczeniu
-urxvr*scrollBar:        false
-urxvr*internalBorder:	0
-urxvr*transparent:	false
-urxvr*fading:	        9
-urxvr*tintColor:       	#FFFFFF
-urxvr*scrollTtyOutput:	False
-urxvr*scrollTtyKeypress:True
-urxvr*scrollWithBuffer:	True
-urxvr*visualBell:	false
-urxvr*font:		-*-neep-medium-*-*-*-18-*-*-*-*-*-iso8859-2
-urxvr*background:	#FFFFFF
-urxvr*foreground:	#000000
-urxvr*urlLauncher:	/home/michal/scripts/browser.sh
-urxvr*perl-ext-common:  matcher
-urxvr*perl-ext:		confirm-paste
-urxvr.cutchars:         `()'*<>[]{|}"
-urxvr*matcher.button:   1
+*Background:    #2A2121
+*Foreground:    #F0DFAF
+*BorderColor:   #340E0E
+!*cursorColor:     #340E0E
+*Cursor:        arrow
+
+xclock*update:     1
+xclock*Mode:       analog
+!xclock*Background: #222222
+!#3F3F3F
+!xclock*Border:     #3F3F3F
+!xclock*Foreground: #F0DFAF
+xclock*geometry:   220x240+0+18
 
 !------------------------------------
 !---- xcalendar ---------------------
