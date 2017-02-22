@@ -38,5 +38,9 @@
 !/.config/luakit/globals.lua
 !/.config/luakit/theme.lua
 !/.config/luakit/binds.lua
+!/.conky/
+!/.conky/*
+.conky/BlackPearlConky/var/
+!.conky/BlackPearlConky/var/.keep
 *~
 *.swp
